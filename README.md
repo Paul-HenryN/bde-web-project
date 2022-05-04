@@ -25,5 +25,6 @@
 
 + [Trello](https://trello.com/b/RgoXLC0u/bde-website)
 + Figma Prototype (Coming soon)
++ [Zoning](https://app.uizard.io/p/8595580c)
 + [HTML Validator](https://validator.w3.org/)
 + [CSS Validator](https://jigsaw.w3.org/css-validator/)
