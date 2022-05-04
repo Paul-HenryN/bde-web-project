@@ -24,7 +24,7 @@
 ## Project Links
 
 + [Trello](https://trello.com/b/RgoXLC0u/bde-website)
-+ Figma Prototype (Coming soon)
++ [Figma design](https://www.figma.com/file/9llc9PNKwTMDOoFI7Dx2tj/bde-website?node-id=0%3A1)
 + [Zoning](https://app.uizard.io/p/8595580c)
 + [HTML Validator](https://validator.w3.org/)
 + [CSS Validator](https://jigsaw.w3.org/css-validator/)
