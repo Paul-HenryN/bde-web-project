@@ -1,0 +1,33 @@
+/*
+    app.css 
+    
+    Main stylesheet 
+*/
+
+:root{
+    /* Colors */
+    --clr-primary: #0693E3;
+    --clr-accent: #FFC251;
+    --clr-neutral-200: #1D1D1D;
+    --clr-neutral-100: #FFFFFF;
+
+    /* Typography */
+    --ff-primary: Inter, sans-serif;
+    --ff-neutral: Inter, sans-serif;
+
+    --fs-1: 4.375rem;
+    --fs-2: 2.25rem;
+    --fs-3: 2rem;
+    --fs-neutral: 1.5rem; 
+    --fs-small: 1.25rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
