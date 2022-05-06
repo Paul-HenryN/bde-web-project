@@ -19,6 +19,16 @@ Route::get('/', function () {
 });
 
 /**
+ * Auth
+ */
+Route::get('/login', function (){
+    return view('auth.login');
+});
+Route::get('/signup', function (){
+    return view('auth.signup');
+});
+
+/**
  * CRUD Operations for events
  */
 Route::get('/events', [EventController::class, 'index']);
