@@ -1,5 +1,5 @@
 //Use all the defined methods within the bdd file
-const  { create, getUsersByLocation, getUsersById, getOtherByEmail, UpdateUser, DeleteUser } = require('../models/user'); 
+const  { create, getUsersByLocation, getUsersById, UpdateUser, DeleteUser } = require('../models/user'); 
 //These constant will help us to use the functionalities of bcrypt and jsonwebtoken modules.  
 const { genSaltSync, hashSync } = require('bcrypt');
 
