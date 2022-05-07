@@ -15,11 +15,11 @@
     --ff-primary: Inter, sans-serif;
     --ff-neutral: Inter, sans-serif;
 
-    --fs-1: 4.375rem;
-    --fs-2: 2.25rem;
-    --fs-3: 2rem;
-    --fs-neutral: 1.5rem; 
-    --fs-small: 1.25rem;
+    --fs-1: 3rem;
+    --fs-2: 2rem;
+    --fs-3: 1rem;
+    --fs-neutral: 0.8rem; 
+    --fs-small: 0.5rem;
 }
 
 * {
@@ -30,4 +30,42 @@
 img {
     display: block;
     max-width: 100%;
+}
+
+.btn-primary{
+    background-color: var(--clr-accent);
+    border: none;
+}
+
+.link-info:link,
+.link-info:visited,
+.link-info:hover,
+.link-info:focus-visible,
+.link-info:active {
+    color: var(--clr-accent);
+}
+
+h1{
+    font-family: var(--ff-primary);
+    font-size: var(--fs-1);
+    font-weight: bolder;
+}
+
+body{
+    font-family: var(--ff-neutral);
+    font-size: var(--fs-neutral);
+    font-weight: normal;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.form-group {
+    display: flex;
+    column-gap: 10px;
 }
