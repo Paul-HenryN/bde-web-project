@@ -79,6 +79,6 @@ myRouter.delete('/categories/delete/:id', checkToken, deleteCategory);
 app.use(myRouter);  
 
 // Launch the server
-app.listen(process.env.APP_PORT, process.env.DB_HOST, function(){
+app.listen(process.env.APP_PORT, process.env.DB_HOST, function() {
 	console.log("Server running on http://"+ process.env.DB_HOST +":"+process.env.APP_PORT); 
 });
