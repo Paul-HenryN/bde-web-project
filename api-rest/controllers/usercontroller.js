@@ -1,10 +1,13 @@
-//Use all the defined methods within the bdd file
+// Use all the defined methods within the user file
 const  { create, getUsersByLocation, getUsersById, UpdateUser, DeleteUser } = require('../models/user'); 
-//These constant will help us to use the functionalities of bcrypt and jsonwebtoken modules.  
+// These constant will help us to use the functionalities of bcrypt module.  
 const { genSaltSync, hashSync } = require('bcrypt');
 
+// Export all the user methods
 module.exports = {
+  //Register new user
   createUser : (req, res) => {
+    //Encrypt his password before saving it in the database
     const body = req.body;
     const salt = genSaltSync(10);
     body.password = hashSync(body.password, salt);
@@ -23,6 +26,7 @@ module.exports = {
     });
   },
 
+  // Lists users of the specified location
   getUsersByLocation : (req, res) => {
     const location = req.params.location;
     getUsersByLocation(location, (err, results) => {
@@ -45,6 +49,7 @@ module.exports = {
     });
   },
 
+ // Returns user that has the specified id
   getUsersById : (req, res) => {
     const id = req.params.id;
     getUsersById(id, (err, results) => {
@@ -65,8 +70,10 @@ module.exports = {
     });
   },
 
+  // Update user that has specified id
   updateUser : (req, res) => {
     const id = req.params.id;
+    //Encrypt his password again if it updates
     const body = req.body;
     const salt = genSaltSync(10);
     body.password = hashSync(body.password, salt);
@@ -88,6 +95,7 @@ module.exports = {
     });
   },
 
+  // Delete user that has specified id
   deleteUser : (req, res) => {
     const id = req.params.id;
     DeleteUser(id, (err, results) => {

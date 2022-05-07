@@ -1,9 +1,11 @@
-//Use any defined variable in the .env file
+// Use any defined variable in the .env file
 require('dotenv').config();
-//Use all the defined methods within the bdd file
-const  { create, getEventsById, UpdateEvent, DeleteEvent } = require('../models/event');
+// Use all the defined methods within the bdd file
+const  { create, getEventsById, getEventsByLocation, UpdateEvent, DeleteEvent } = require('../models/event');
 
+// Export all the event methods
 module.exports = {
+  // Register a new event
   createEvent : (req, res) => {
     const body = req.body;
     create(body, (err, results) => {
@@ -21,6 +23,7 @@ module.exports = {
     });
   },
 
+  // Returns events registered in the specified id
   getEventsById : (req, res) => {
     const id = req.params.id;
     getEventsById(id, (err, results) => {
@@ -41,19 +44,28 @@ module.exports = {
     });
   },
 
-  // getEventsByLocation : (location, callBack) => {
-	// 	pool.query(
-	// 		"SELECT * FROM events WHERE location = ?",
-	// 		[location],
-	// 		(error, results, fields) => {
-	// 			if (error) {
-	// 				return callBack(error);
-	// 			}
-	// 			return callBack(null, results);
-	// 		}
-	// 	);
-	// },
+  // Lists events registered in the specified location
+  getEventsByLocation : (req, res) => {
+		const location = req.params.location;
+    getEventsByLocation(location, (err, results) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      if (!results) {
+        return res.json({
+          success : 0,
+          message : "Record not found"
+        });
+      }
+      return res.json({
+        success : 1,
+        data : results
+      });
+    });
+	},
 
+  // Update event that has specified id
   updateEvent : (req, res) => {
     const id = req.params.id;
     const body = req.body;
@@ -75,6 +87,7 @@ module.exports = {
     });
   },
 
+  // Delete event that has specified id
   deleteEvent : (req, res) => {
     const id = req.params.id;
     DeleteEvent(id, (err, results) => {

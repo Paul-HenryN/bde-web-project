@@ -1,9 +1,14 @@
-//Use any defined variable in the .env file
+// Use any defined variable in the .env file
 require('dotenv').config();
+
+// The variable below will help us to use  jsonwebtoken functionalities
 const  { verify } = require('jsonwebtoken');
 
+// Export the checkToken method
 module.exports = {
+	// Check out the token given by the designer
   checkToken : (req, res, next) => {
+		// Go to the authorization section of your api testing app (POSTMAN)
 		let token = req.get("authorization");
 		if (token) {
 			token = token.slice(7);

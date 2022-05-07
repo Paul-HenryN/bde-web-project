@@ -1,4 +1,7 @@
+// Import the mysql module as a constant
 const { createPool } = require('mysql');
+
+// Create a connection pool with connection limit of 10 hosts
 const pool = createPool({
   port : process.env.DB_PORT,
   host : process.env.DB_HOST,
@@ -8,4 +11,5 @@ const pool = createPool({
   connectionLimit : 10
 });
 
+// Export the created pool to use it everywhere
 module.exports = pool;
