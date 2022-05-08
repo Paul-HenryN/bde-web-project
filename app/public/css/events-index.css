@@ -1,0 +1,9 @@
+h1{
+    font-weight: normal;
+    font-size: var(--fs-2);
+}
+
+h2{
+    font-weight: bold;
+    font-size: var(--fs-3);
+}

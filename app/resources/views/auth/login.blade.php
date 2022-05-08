@@ -22,13 +22,13 @@
           <!-- Email input -->
           <div class="form-outline mb-3">
             <label for="email">E-mail address</label>
-            <input type="email" id="email" class="form-control ">
+            <input type="email" id="email" class="form-control">
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <label for="password">Password</label>
-            <input type="password" id="password" class="form-control ">
+            <input type="password" id="password" class="form-control">
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
