@@ -112,4 +112,25 @@ class EventController extends Controller
         $event = Event::find($id);
         $event->delete();
     }
+
+    /**
+     * Search in the events
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        $events = Event::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+
+        return view('events.search', [
+            'events' => $events,
+            'search' => $search
+        ]);
+    }
 }

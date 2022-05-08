@@ -27,8 +27,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            BDE Website
-                            {{-- <img src="{{asset('images/logo.png')}}" alt="CESI Logo" style="width:100px;"> --}}
+                            <img src="{{asset('images/logo.png')}}" alt="CESI Logo" style="width:100px;">
                         </a>
                         <!-- ***** Logo End ***** -->
 

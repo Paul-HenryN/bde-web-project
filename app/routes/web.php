@@ -44,3 +44,4 @@ Route::post('/events/add', [EventController::class, 'store']);
 Route::get('/events/update', [EventController::class, 'edit']);
 Route::post('/events/update/{id}', [EventController::class, 'update']);
 Route::post('/events/delete/{id}', [EventController::class, 'destroy']);
+Route::post('/events/search', [EventController::class, 'search']);

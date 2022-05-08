@@ -9,19 +9,13 @@
     <div class="container" style="margin-block: 10rem">
         <div class="row gx-5">
             <div class="col-12 col-lg-6">
-                <img src="{{ asset('images/events.jpg') }}" style="border-radius: 0.5rem">
+                <img src="{{ asset($event->image_url) }}" style="border-radius: 0.5rem">
             </div>
 
             <div class="col mt-5 mt-lg-0">
-                <h1 class="mb-5">Event Name</h1>
+                <h1 class="mb-5">{{$event->name}}</h1>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem et fuga rerum molestias
-                    perspiciatis? Incidunt dolorum voluptatibus quaerat odio nemo, natus non delectus libero enim. Eligendi
-                    omnis ex ipsa vitae.Quibusdam nostrum mollitia eligendi, asperiores cum ratione veritatis sed ipsam
-                    voluptatibus placeat ea numquam odit consequatur velit illum iure vero. Fugiat nulla quibusdam quod
-                    reprehenderit ipsa! Incidunt provident minus eligendi?
-                </p>
+                <p>{{$event->description}}</p>
 
                 <div class="card-meta d-flex justify-content-between mt-3">
                     <div class="d-flex gap-3">
@@ -35,7 +29,7 @@
                     </div>
 
                     <div class="card-date">
-                        <time datetime="2022-06-06">Jun 6 2022</time>
+                        <time datetime="{{$event->date}}">{{$event->date}}</time>
                     </div>
                 </div>
             </div>
@@ -129,7 +123,7 @@
 
         <div class="container-fluid px-5">
             <div class="row">
-                <h2><span>3</span> Comments</h2>
+                <h2><span>2</span> Comments</h2>
             </div>
 
             <div class="row mt-5">
