@@ -2,10 +2,10 @@ body { color: #ccc }
 .footer-widget p {
     margin-bottom: 27px;
 }
-p {
+footer p {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
-  color:white;
+    color:white;
     line-height: 28px;
 }
 

@@ -1,4 +1,4 @@
-@extends('templates.master')
+@extends('templates.standalone')
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/login.css')}}">
