@@ -27,6 +27,12 @@ Route::get('/login', function (){
 Route::get('/signup', function (){
     return view('auth.signup');
 });
+Route::get('/events/search', function (){
+    return view('events.search');
+});
+Route::get('/events/show', function (){
+    return view('events.show');
+});
 
 /**
  * CRUD Operations for events

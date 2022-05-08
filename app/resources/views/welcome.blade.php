@@ -391,7 +391,7 @@
 @section('scripts')
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('js/isotope.min.js') }}"></script>
+    
     <script src="{{ asset('js/owl-carousel.js') }}"></script>
     <script src="{{ asset('js/lightbox.js') }}"></script>
     <script src="{{ asset('js/tabs.js') }}"></script>

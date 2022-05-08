@@ -3,11 +3,11 @@
 @extends('templates.master')
 
 @section('styles')
-<link rel="stylesheet" href="{{asset('css/events-index.css')}}">
+<link rel="stylesheet" href="{{asset('css/events.css')}}">
 @endsection
 
 @section('content')
-    <div class="container-fluid my-5 px-5">
+    <div class="container-fluid px-5" style="margin-block: 10rem">
         <div class="row mb-5">
             <div class="col">
                 <h1>Events</h1>

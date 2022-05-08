@@ -258,6 +258,16 @@ img.rounded-corners {
     color: var(--clr-accent-100);
 }
 
+.btn-like-bg,
+.btn-like-bg:link,
+.btn-like-bg:visited,
+.btn-like-bg:hover,
+.btn-like-bg:focus,
+.btn--like-bg:hover {
+  background-color: var(--clr-accent-100);
+  color: var(--clr-neutral-100);
+}
+
 .btn-subscribe,
 .btn-subscribe:link,
 .btn-subscribe:visited,
@@ -280,7 +290,7 @@ img.rounded-corners {
 .btn-circ:visited,
 .btn-circ:hover,
 .btn-circ:focus,
-.btn-circ:hover{
+.btn-circ:hover {
     border-radius: 100%;
     padding: 0;
     width: 3.5rem;

@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-
     @yield('styles')
+
     <title>Document</title>
 </head>
 
 <body>
     @yield('sub-header')
-
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
@@ -244,6 +243,7 @@
         <!-- End Back to top -->
     </footer>
 
+    <script src="{{ asset('js/isotope.min.js') }}"></script>
     @yield('scripts')
     <script src="{{ asset('js/custom.js') }}"></script>
 </body>
