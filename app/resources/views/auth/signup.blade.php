@@ -28,12 +28,16 @@
             <div class="form-group mb-3">
               <div class="form-outline">
                 <label class="form-label" for="name">First name</label>
+<<<<<<< HEAD
                 <input type="name" name="name" id="name" class="form-control ">
+=======
+                <input type="name" name="firstname" id="name" class="form-control ">
+>>>>>>> d407925d7deba4ecc1793896add889fe91b79b1c
               </div>
 
               <div class="form-outline">
-                <label class="form-label" for="surname">Surname</label>
-                <input type="surname" name="surname" id="surname" class="form-control ">
+                <label class="form-label" for="lastname">Surname</label>
+                <input type="lastname" name="lastname" id="lastname" class="form-control ">
               </div>
             </div>
 
