@@ -52,6 +52,7 @@ class RegisteredUserController extends Controller
             'location' => $request->location,
             'password' => Hash::make($request->password),
             'avatar_url' => $request->avatar->hashName(),
+            'role_id' => 3
         ]);
 
         event(new Registered($user));

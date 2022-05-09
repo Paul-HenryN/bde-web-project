@@ -21,6 +21,7 @@ return new class extends Migration
 			$table->string('location');
             $table->string('password');
 			$table->string('avatar_url');
+            $table->foreignId('role_id')->constrained();
             $table->timestamps();
         });
     }

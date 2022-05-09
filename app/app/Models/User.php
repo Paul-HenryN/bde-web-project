@@ -24,6 +24,7 @@ class User extends Authenticatable
         'location',
         'password',
         'avatar_url',
+        'role_id'
     ];
 
     /**
@@ -34,4 +35,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function role()
+    {
+        return $this->hasOne(Role::class);
+    }
 }
