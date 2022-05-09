@@ -16,7 +16,9 @@
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;">
+          <form method="POST" style="width: 23rem;">
+            @csrf
+
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
               <h1 class="">Join us</h1>
             </div>
@@ -25,30 +27,30 @@
 
             <div class="form-group mb-3">
               <div class="form-outline">
-                <label class="form-label" for="surname">Fist name</label>
-                <input type="surname" id="surname" class="form-control ">
+                <label class="form-label" for="name">Fist name</label>
+                <input type="name" name="name" id="name" class="form-control ">
               </div>
 
               <div class="form-outline">
                 <label class="form-label" for="surname">Surname</label>
-                <input type="surname" id="surname" class="form-control ">
+                <input type="surname" name="surname" id="surname" class="form-control ">
               </div>
             </div>
 
 
             <div class="form-outline mb-3">
               <label class="form-label" for="form2Example18">E-mail address</label>
-              <input type="email" id="email" class="form-control ">
+              <input type="email" name="email" id="email" class="form-control ">
             </div>
 
             <div class="form-outline mb-3">
               <label class="form-label" for="password">Password</label>
-              <input type="password" id="password" class="form-control " />
+              <input type="password" name="password" id="password" class="form-control " />
             </div>
 
             <div class="form-outline mb-3">
               <label class="form-label" for="password_confirm">Confirm your password</label>
-              <input type="password" id="password_confirm" class="form-control " />
+              <input type="password" name="password_confirm" id="password_confirm" class="form-control " />
             </div>
 
             <div class="form-outline mb-3">
@@ -64,7 +66,7 @@
 
             <div class="mb-4">
               <label for="formFile" class="form-label">Avatar</label>
-              <input class="form-control" type="file" id="formFile" accept=".jpg,.png,.gif">
+              <input class="form-control" type="file" name="avatar_url" id="formFile" accept=".jpg,.png,.gif">
             </div>
 
             <!-- Checkbox -->
@@ -84,7 +86,7 @@
             </div>
 
             <div class="pt-1 mb-3">
-              <button type="button" class="btn btn-primary btn-lg">Sign up</button>
+              <button type="submit" class="btn btn-primary btn-lg">Sign up</button>
             </div>
 
             <p class="fw-bold">Already registered ? <a href="/login" class="link-info">Login into your account</a></p>

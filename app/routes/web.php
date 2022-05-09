@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,30 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/**
- * Auth
- */
-Route::get('/login', function (){
-    return view('auth.login');
-});
-Route::get('/signup', function (){
-    return view('auth.signup');
-});
-Route::get('/events/search', function (){
-    return view('events.search');
-});
-Route::get('/events/show', function (){
-    return view('events.show');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-/**
- * CRUD Operations for events
- */
-Route::get('/events', [EventController::class, 'index']);
-Route::get('/events/{id}', [EventController::class, 'show']);
-Route::get('/events/add', [EventController::class, 'create']);
-Route::post('/events/add', [EventController::class, 'store']);
-Route::get('/events/update', [EventController::class, 'edit']);
-Route::post('/events/update/{id}', [EventController::class, 'update']);
-Route::post('/events/delete/{id}', [EventController::class, 'destroy']);
-Route::post('/events/search', [EventController::class, 'search']);
+require __DIR__.'/auth.php';
