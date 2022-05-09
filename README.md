@@ -25,6 +25,6 @@
 
 + [Trello](https://trello.com/b/RgoXLC0u/bde-website)
 + [Figma design](https://www.figma.com/file/9llc9PNKwTMDOoFI7Dx2tj/bde-website?node-id=0%3A1)
-+ [Zoning](https://app.uizard.io/p/8595580c)
++ [Zoning](https://app.uizard.io/p/8595580c , https://app.uizard.io/p/4e5f175f)
 + [HTML Validator](https://validator.w3.org/)
 + [CSS Validator](https://jigsaw.w3.org/css-validator/)
