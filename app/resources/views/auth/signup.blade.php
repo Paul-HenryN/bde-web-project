@@ -27,13 +27,13 @@
 
             <div class="form-group mb-3">
               <div class="form-outline">
-                <label class="form-label" for="name">Fist name</label>
-                <input type="name" name="name" id="name" class="form-control ">
+                <label class="form-label" for="name">First name</label>
+                <input type="name" name="firstname" id="name" class="form-control ">
               </div>
 
               <div class="form-outline">
-                <label class="form-label" for="surname">Surname</label>
-                <input type="surname" name="surname" id="surname" class="form-control ">
+                <label class="form-label" for="lastname">Surname</label>
+                <input type="lastname" name="lastname" id="lastname" class="form-control ">
               </div>
             </div>
 
