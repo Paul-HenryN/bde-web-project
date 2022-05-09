@@ -27,7 +27,7 @@
 
             <div class="form-group mb-3">
               <div class="form-outline">
-                <label class="form-label" for="name">Fist name</label>
+                <label class="form-label" for="name">First name</label>
                 <input type="name" name="name" id="name" class="form-control ">
               </div>
 
@@ -48,8 +48,8 @@
             </div>
 
             <div class="form-outline mb-3">
-              <label class="form-label" for="password_confirm">Confirm your password</label>
-              <input type="password" name="password_confirm" id="password_confirm" class="form-control " />
+              <label class="form-label" for="password_confirmation">Confirm your password</label>
+              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control " />
             </div>
 
             <div class="form-outline mb-3">
@@ -70,16 +70,16 @@
 
             <!-- Checkbox -->
             <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
+              <input class="form-check-input me-2" type="checkbox" value="" id="conditions" />
+              <label class="form-check-label" for="conditions">
                 I'have read and accepted the <a href="">Terms and privacy policy.</a>
               </label>
             </div>
 
             <!-- Checkbox -->
             <div class="form-check mb-4">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
+              <input class="form-check-input me-2" type="checkbox" value="" id="newsletter" />
+              <label class="form-check-label" for="newsletter">
                 Receive update via e-mail about new events.
               </label>
             </div>

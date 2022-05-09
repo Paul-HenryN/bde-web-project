@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,15 @@ Route::get('/', function () {
 });
 
 require __DIR__.'/auth.php';
+
+/**
+ * CRUD Operations for events
+ */
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/{id}', [EventController::class, 'show']);
+Route::get('/events/add', [EventController::class, 'create']);
+Route::post('/events/add', [EventController::class, 'store']);
+Route::get('/events/update', [EventController::class, 'edit']);
+Route::post('/events/update/{id}', [EventController::class, 'update']);
+Route::post('/events/delete/{id}', [EventController::class, 'destroy']);
+Route::post('/events/search', [EventController::class, 'search']);
