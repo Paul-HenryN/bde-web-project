@@ -39,7 +39,7 @@
 
                             @if(Auth::user())
                             <div class="cta d-flex gap-3">
-                                <a href="#">{{Auth::user()->surname}}</a>
+                                <a href="#">{{Auth::user()->firstname}} {{Auth::user()->lastname}}</a>
                                 <a href="/logout">Logout</a>
                             </div>
     
