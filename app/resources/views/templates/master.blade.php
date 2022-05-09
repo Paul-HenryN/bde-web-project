@@ -27,27 +27,29 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="{{asset('images/logo.png')}}" alt="CESI Logo" style="width:100px;">
+                            <img src="{{ asset('images/logo.png') }}" alt="CESI Logo" style="width:100px;">
                         </a>
                         <!-- ***** Logo End ***** -->
 
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
+                        <ul class="nav align-items-center">
                             <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
                             <li><a href="#">About Us</a></li>
                             <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
 
-                            @if(Auth::user())
-                            <div class="cta d-flex gap-3">
-                                <a href="#">{{Auth::user()->firstname}} {{Auth::user()->lastname}}</a>
-                                <a href="/logout">Logout</a>
-                            </div>
-    
+                            @if (Auth::user())
+                                <li class="d-md-flex gap-2 align-items-center">
+                                    <a href="#">{{ Auth::user()->firstname }}</a>
+                                    <img src="{{ asset('storage/avatars/' . Auth::user()->avatar_url) }}"
+                                        class="d-none d-md-block" style="border-radius: 100%; max-width: 50px;">
+                                </li>
+
+                                <li><a href="/logout">Logout</a></li>
                             @else
-                            <div class="cta d-flex gap-3">
-                                <a href="/login" class="btn btn-tertiary">Log In</a>
-                                <a href="/register" class="btn btn-primary">Sign Up</a>
-                            </div>
+                                <div class="cta d-flex gap-3">
+                                    <a href="/login" class="btn btn-tertiary">Log In</a>
+                                    <a href="/register" class="btn btn-primary">Sign Up</a>
+                                </div>
                             @endif
                         </ul>
 
@@ -243,9 +245,9 @@
         <div id="back-to-top" class="back-to-top">
 
 
-        <a class="btn btn-dark" title="Back to Top" href="#" style="display: block;">
-            <i class="fa fa-angle-up"></i>
-        </button>
+            <a class="btn btn-dark" title="Back to Top" href="#" style="display: block;">
+                <i class="fa fa-angle-up"></i>
+                </button>
         </div>
         <!-- End Back to top -->
     </footer>

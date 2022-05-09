@@ -274,7 +274,30 @@
                             </div>
                         </div>
 
+                        <div class="item">
+                            <img src="assets/images/fake-profile-pictures-TPDNE-300x300.webp" alt=""
+                                class="wdn-strech rounded-corners">
+                            <div class="down-content">
+                                <h4>Faris</h4>
+                                <h4>"The product is so cool and creates so much value"</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

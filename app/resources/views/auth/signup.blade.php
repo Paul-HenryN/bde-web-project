@@ -16,7 +16,7 @@
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form method="POST" style="width: 23rem;">
+          <form method="POST" style="width: 23rem;" enctype="multipart/form-data">
             @csrf
 
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
@@ -27,12 +27,12 @@
 
             <div class="form-group mb-3">
               <div class="form-outline">
-                <label class="form-label" for="name">First Name</label>
+                <label class="form-label" for="name">First name</label>
                 <input type="name" name="firstname" id="name" class="form-control ">
               </div>
 
               <div class="form-outline">
-                <label class="form-label" for="lastname">Last Nname</label>
+                <label class="form-label" for="lastname">Last name</label>
                 <input type="lastname" name="lastname" id="lastname" class="form-control ">
               </div>
             </div>
@@ -64,8 +64,8 @@
 
 
             <div class="mb-4">
-              <label for="formFile" class="form-label">Avatar</label>
-              <input class="form-control" type="file" name="avatar_url" id="formFile" accept=".jpg,.png,.gif">
+              <label for="avatar" class="form-label">Avatar</label>
+              <input type="file" class="form-control" name="avatar" id="avatar" accept=".jpg,.png,.gif">
             </div>
 
             <!-- Checkbox -->
