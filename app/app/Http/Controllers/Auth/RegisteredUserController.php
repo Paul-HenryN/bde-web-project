@@ -39,8 +39,11 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'location' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'avatar_url' => ['required', 'string', 'max:255'],
         ]);
+
+        if($request->hasFile('avatar')) {
+            $request->avatar->store('avatars', 'public');
+        }
 
         $user = User::create([
             'firstname' => $request->firstname,
@@ -48,7 +51,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'location' => $request->location,
             'password' => Hash::make($request->password),
-            'avatar_url' => $request->avatar_url,
+            'avatar_url' => $request->avatar->hashName(),
         ]);
 
         event(new Registered($user));
