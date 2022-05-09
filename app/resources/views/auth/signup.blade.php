@@ -37,7 +37,6 @@
               </div>
             </div>
 
-
             <div class="form-outline mb-3">
               <label class="form-label" for="form2Example18">E-mail address</label>
               <input type="email" name="email" id="email" class="form-control ">
@@ -56,10 +55,10 @@
             <div class="form-outline mb-3">
               <label class="form-label" for="password_confirm">Location</label>
               <select class="form-select" name="location" id="location">
-                <option value="">CESI Douala</option>
-                <option value="">CESI Rouen</option>
-                <option value="">CESI Paris</option>
-                <option value="">CESI Montpellier</option>
+                <option value="Douala">CESI Douala</option>
+                <option value="Rouen">CESI Rouen</option>
+                <option value="Paris">CESI Paris</option>
+                <option value="Montpellier">CESI Montpellier</option>
               </select>
             </div>
 

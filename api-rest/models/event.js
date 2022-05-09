@@ -43,7 +43,7 @@ module.exports = {
 	// Define a prepared statement for getting an event by user location
 	getEventsByLocation : (location, callBack) => {
 		pool.query(
-			"SELECT events.id, events.name, events.description, events.image_url, events.date, events.price, events.is_repeating FROM users INNER JOIN events ON users.id_events = events.id WHERE users.location = ? ORDER BY events.id ASC",
+			"SELECT events.id, events.name, events.description, events.image_url, events.date, events.price, events.is_repeating FROM users INNER JOIN events ON events.id_user = users.id WHERE users.location = ? ORDER BY events.id ASC",
 			[location],
 			(error, results, fields) => {
 				if (error) {

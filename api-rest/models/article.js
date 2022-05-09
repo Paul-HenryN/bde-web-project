@@ -41,7 +41,7 @@ module.exports = {
 	// Define a prepared statement for updating an article by user location
 	getArticlesByLocation : (location, callBack) => {
 		pool.query(
-			"SELECT articles.id, articles.name, articles.description, articles.image_url,articles.price FROM (articles NATURAL JOIN orders) INNER JOIN users ON orders.id_user = users.id WHERE users.location = ? ORDER BY articles.id",
+			"SELECT articles.id, articles.name, articles.description, articles.image_url, articles.price FROM (articles NATURAL JOIN orders) INNER JOIN users ON orders.id_user = users.id WHERE users.location = ? ORDER BY articles.id",
 			[location],
 			(error, results, fields) => {
 				if (error) {

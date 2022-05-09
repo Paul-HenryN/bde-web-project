@@ -37,10 +37,18 @@
                             <li><a href="#">About Us</a></li>
                             <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
 
+                            @if(Auth::user())
+                            <div class="cta d-flex gap-3">
+                                <a href="#">{{Auth::user()->surname}}</a>
+                                <a href="/logout">Logout</a>
+                            </div>
+    
+                            @else
                             <div class="cta d-flex gap-3">
                                 <a href="/login" class="btn btn-tertiary">Log In</a>
-                                <a href="/signup" class="btn btn-primary">Sign Up</a>
+                                <a href="/register" class="btn btn-primary">Sign Up</a>
                             </div>
+                            @endif
                         </ul>
 
                         <a class='menu-trigger'>

@@ -12,7 +12,8 @@
         <img src="{{asset('images/events.jpg')}}" class="img-fluid hero" alt="Hero image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form method="POST">
+            @csrf
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <h1 class="">Login</h1>
           </div>
@@ -22,13 +23,13 @@
           <!-- Email input -->
           <div class="form-outline mb-3">
             <label for="email">E-mail address</label>
-            <input type="email" id="email" class="form-control">
+            <input type="email" name="email" id="email" class="form-control">
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <label for="password">Password</label>
-            <input type="password" id="password" class="form-control">
+            <input type="password" name="password" id="password" class="form-control">
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
@@ -43,7 +44,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-primary btn-lg">Login</button>
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account ? <a href="register" class="link-info">Register</a></p>
           </div>
 
