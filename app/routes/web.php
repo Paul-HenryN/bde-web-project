@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
@@ -29,6 +31,23 @@ require __DIR__.'/auth.php';
  */
 Route::post('/events/comment/{event_id}', [CommentController::class, 'store'])
     ->middleware('auth');
+
+/**
+ * Liking / Disliking
+ */
+Route::get('/events/like/{event_id}', [LikeController::class, 'store'])
+    ->middleware('auth');
+Route::get('/events/dislike/{event_id}', [LikeController::class, 'destroy'])
+    ->middleware('auth');
+
+/**
+ * Subscribing / Unsubscribing
+ */
+Route::get('/events/subscribe/{event_id}', [SubscriptionController::class, 'store'])
+    ->middleware('auth');
+Route::get('/events/unsubscribe/{event_id}', [SubscriptionController::class, 'destroy'])
+    ->middleware('auth');
+
 
 /**
  * CRUD Operations for events

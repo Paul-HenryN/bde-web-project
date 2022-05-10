@@ -53,6 +53,16 @@ class User extends Authenticatable
 
     public function comments()
     {
-        return $this->belongsToMany(Event::class, 'comments')->withPivot('text');;
+        return $this->belongsToMany(Event::class, 'comments')->withPivot('text');
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(Event::class, 'likes');
+    }
+
+    public function subscriptions()
+    {
+        return $this->belongsToMany(Event::class, 'subscriptions');
     }
 }

@@ -6,25 +6,27 @@
 @endsection
 
 @section('content')
-    <div class="container" style="margin-block: 10rem">
+    <div class="container-fluid px-5" style="margin-block: 10rem">
         <div class="row gx-5">
             <div class="col-12 col-lg-6">
                 <img src="{{ asset($event->image_url) }}" style="border-radius: 0.5rem">
             </div>
 
             <div class="col mt-5 mt-lg-0">
-                <h1 class="mb-5">{{ $event->name }}</h1>
+                <h1 class="mb-4">{{ $event->name }}</h1>
 
                 <p>{{ $event->description }}</p>
 
                 <div class="card-meta d-flex justify-content-between mt-3">
                     <div class="d-flex gap-3">
                         <div class="card-likes">
-                            3<i class="fa-solid fa-heart mx-1"></i>
+                            {{ count($event->likes) }}
+                            <i class="fa-solid fa-heart mx-1"></i>
                         </div>
 
                         <div class="card-comments">
-                            5<i class="fa-solid fa-comment mx-1"></i>
+                            {{ count($event->comments) }}
+                            <i class="fa-solid fa-comment mx-1"></i>
                         </div>
                     </div>
 
@@ -37,23 +39,40 @@
 
         <div class="row mt-5">
             <div class="col-6 col-lg-2">
-                <button class="btn btn-like-bg btn-round">
-                    <i class="fas fa-heart"></i>
-                    Like
-                </button>
+                @if (Auth::user() && Auth::user()->likes->contains($event))
+                    <a href="/events/dislike/{{ $event->id }}" class="btn btn-like-bg btn-round">
+                        <i class="fa-solid fa-heart-crack"></i>
+                        Dislike
+                    </a>
+                @else
+                    <a href="/events/like/{{ $event->id }}" class="btn btn-like-bg btn-round">
+                        <i class="fas fa-heart"></i>
+                        Like
+                    </a>
+                @endif
             </div>
 
             <div class="col-6 col-lg-2">
-                <button class="btn btn-secondary btn-round">Subscribe</button>
+                @if (Auth::user() && Auth::user()->subscriptions->contains($event))
+                    <a href="/events/unsubscribe/{{ $event->id }}" class="btn btn-subscribe btn-round">
+                        <i class="fa-solid fa-minus"></i>
+                        Unsubscribe
+                    </a>
+                @else
+                    <a href="/events/subscribe/{{ $event->id }}" class="btn btn-subscribe btn-round">
+                        <i class="fa-solid fa-plus"></i>
+                        Subscribe
+                    </a>
+                @endif
             </div>
         </div>
 
         <hr>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <section class="gallery py-5" id="gallery">
-                    <div class="container">
+                    <div class="container-fluid">
                         <!-- section title -->
                         <div class="row mb-5">
                             <div class="col d-flex flex-wrap text-uppercase justify-content-center">
@@ -131,10 +150,11 @@
             @foreach ($event->comments as $comment)
                 <div class="row mt-5">
                     <div class="col-2 col-md-1">
-                        <img src="{{ asset('storage/avatars/'.$comment->avatar_url) }}" alt="" style="border-radius: 50%">
+                        <img src="{{ asset('storage/avatars/' . $comment->avatar_url) }}" alt=""
+                            style="border-radius: 50%">
                     </div>
                     <div class="col">
-                        <h3>{{ $comment->firstname}} {{ $comment->lastname }}</h3>
+                        <h3>{{ $comment->firstname }} {{ $comment->lastname }}</h3>
                         <p>
                             {{ $comment->pivot->text }}
                         </p>
@@ -146,7 +166,7 @@
 
         <div class="row d-flex px-5" style="margin-top: 7rem;">
             <div class="col">
-                <form class="form" method="POST" action="comment/{{ $event->id }}">
+                <form class="form" method="POST" action="/events/comment/{{ $event->id }}">
                     @csrf
 
                     <div class="form-outline">
