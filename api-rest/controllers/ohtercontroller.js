@@ -1,7 +1,7 @@
 //Use any defined variable in the .env file
 require('dotenv').config();
 // Use all the defined methods within the config file
-const  { create, getOtherByEmail } = require('../models/config');
+const  { create, getOtherByEmail } = require('../models/other');
 // The variables below will help us to use bcrypt and jsonwebtoken functionalities
 const { genSaltSync, hashSync, compareSync } = require('bcrypt');
 const  { sign } = require('jsonwebtoken');

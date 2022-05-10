@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -40,3 +42,16 @@ Route::post('/events/update/{id}', [EventController::class, 'update']);
 Route::post('/events/delete/{id}', [EventController::class, 'destroy']);
 Route::post('/events/search', [EventController::class, 'search']);
 
+/**
+ * CRUD Operations for articles
+ */
+Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/articles/{id}', [ArticleController::class, 'show']);
+Route::post('/articles/search', [ArticleController::class, 'search']);
+
+/**
+ * CRUD Operations for categories
+ */
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories/{id}', [CategoryController::class, 'show']);
+Route::post('/categories/search', [CategoryController::class, 'search']);

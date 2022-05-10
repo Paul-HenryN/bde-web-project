@@ -8,7 +8,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 // Import the methods defined for each controller
-const { createOhter, login } = require('./controllers/configcontroller');
+const { createOhter, login } = require('./controllers/ohtercontroller');
 const { createUser, getUsersByLocation, getUsersById, updateUser, deleteUser } = require('./controllers/usercontroller');
 const { createEvent, getEventsById, getEventsByLocation, updateEvent, deleteEvent } = require('./controllers/eventcontroller');
 const { createArticle, getArticlesById, getArticlesByLocation, updateArticle, deleteArticle } = require('./controllers/articlecontroller');
