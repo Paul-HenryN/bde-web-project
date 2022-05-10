@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::all()->where('is_published', true);
 
         return view('events.index', [
             'events' => $events

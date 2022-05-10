@@ -36,4 +36,14 @@ class Event extends Model
     {
         return $this->belongsToMany(User::class, 'comments')->withPivot('text');
     }
+
+    public function likes()
+    {
+        return $this->belongsToMany(User::class, 'likes');
+    }
+
+    public function subscriptions()
+    {
+        return $this->belongsToMany(User::class, 'subscriptions');
+    }
 }

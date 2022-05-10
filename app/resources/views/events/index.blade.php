@@ -1,5 +1,4 @@
 <!-- Display a listing of the events -->
-
 @extends('templates.master')
 
 @section('styles')
@@ -18,7 +17,8 @@
                     @csrf
 
                     <div class="form-outline d-flex gap-3">
-                        <input type="search" id="password" name="search" class="form-control" placeholder="Find a particular event">
+                        <input type="search" id="password" name="search" class="form-control"
+                            placeholder="Find a particular event">
                         <button type="submit" class="btn btn-secondary btn-round">Search</button>
                     </div>
                 </form>
@@ -40,18 +40,34 @@
                 @foreach ($events as $event)
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card">
-                            <a href="/events/{{$event->id}}">
+                            <a href="/events/{{ $event->id }}">
                                 <img class="card-img-top" src="{{ asset($event->image_url) }}" alt="Card image cap">
                             </a>
-                            
-                            <div class="card-cta d-flex gap-2">
-                                <button href="" class="btn btn-circ btn-shadow btn-like">
-                                    <i class="fa-solid fa-heart mx-1"></i>
-                                </button>
 
-                                <button href="" class="btn btn-circ btn-shadow btn-subscribe">
-                                    <i class="fa-solid fa-plus mx-1"></i>
-                                </button>
+                            <div class="card-cta d-flex gap-2">
+                                @if (Auth::user() && Auth::user()->likes->contains($event))
+                                    <a href="/events/dislike/{{ $event->id }}" class="btn btn-circ btn-shadow btn-like"
+                                        title="Dislike">
+                                        <i class="fa-solid fa-heart-crack mx-1"></i>
+                                    </a>
+                                @else
+                                    <a href="/events/like/{{ $event->id }}" class="btn btn-circ btn-shadow btn-like"
+                                        title="Like">
+                                        <i class="fa-solid fa-heart mx-1"></i>
+                                    </a>
+                                @endif
+
+                                @if (Auth::user() && Auth::user()->subscriptions->contains($event))
+                                    <a href="/events/unsubscribe/{{ $event->id }}"
+                                        class="btn btn-circ btn-shadow btn-subscribe">
+                                        <i class="fa-solid fa-minus mx-1"></i>
+                                    </a>
+                                @else
+                                    <a href="/events/subscribe/{{ $event->id }}"
+                                        class="btn btn-circ btn-shadow btn-subscribe">
+                                        <i class="fa-solid fa-plus mx-1"></i>
+                                    </a>
+                                @endif
                             </div>
 
                             <div class="card-body">
@@ -61,11 +77,13 @@
                                 <div class="card-meta d-flex justify-content-between mt-3">
                                     <div class="d-flex gap-3">
                                         <div class="card-likes">
-                                            3<i class="fa-solid fa-heart mx-1"></i>
+                                            {{ count($event->likes) }}
+                                            <i class="fa-solid fa-heart mx-1"></i>
                                         </div>
 
                                         <div class="card-comments">
-                                            5<i class="fa-solid fa-comment mx-1"></i>
+                                            {{ count($event->comments) }}
+                                            <i class="fa-solid fa-comment mx-1"></i>
                                         </div>
                                     </div>
 

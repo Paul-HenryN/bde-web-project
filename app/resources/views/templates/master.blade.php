@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     @yield('styles')
 
-    <title>Document</title>
+    <title>BDE</title>
 </head>
 
 <body>
