@@ -40,4 +40,19 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function votes()
+    {
+        return $this->belongsToMany(Event::class, 'votes');
+    }
+
+    public function comments()
+    {
+        return $this->belongsToMany(Event::class, 'comments')->withPivot('text');;
+    }
 }

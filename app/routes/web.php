@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EventController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,12 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 /**
+ * Commenting
+ */
+Route::post('/events/comment/{event_id}', [CommentController::class, 'store'])
+    ->middleware('auth');
+
+/**
  * CRUD Operations for events
  */
 Route::get('/events', [EventController::class, 'index']);
@@ -31,3 +39,4 @@ Route::get('/events/update', [EventController::class, 'edit']);
 Route::post('/events/update/{id}', [EventController::class, 'update']);
 Route::post('/events/delete/{id}', [EventController::class, 'destroy']);
 Route::post('/events/search', [EventController::class, 'search']);
+

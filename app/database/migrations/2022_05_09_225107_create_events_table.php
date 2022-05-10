@@ -21,6 +21,8 @@ return new class extends Migration
             $table->date('date');
             $table->integer('price');
             $table->boolean('is_repeating');
+            $table->boolean('is_published');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

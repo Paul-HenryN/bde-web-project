@@ -17,6 +17,23 @@ class Event extends Model
         'image_url',
         'date',
         'price',
-        'is_repeating'
+        'is_repeating',
+        'is_published',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function votes()
+    {
+        return $this->belongsToMany(User::class, 'votes');
+    }
+
+    public function comments()
+    {
+        return $this->belongsToMany(User::class, 'comments')->withPivot('text');
+    }
 }

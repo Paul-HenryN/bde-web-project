@@ -13,9 +13,9 @@
             </div>
 
             <div class="col mt-5 mt-lg-0">
-                <h1 class="mb-5">{{$event->name}}</h1>
+                <h1 class="mb-5">{{ $event->name }}</h1>
 
-                <p>{{$event->description}}</p>
+                <p>{{ $event->description }}</p>
 
                 <div class="card-meta d-flex justify-content-between mt-3">
                     <div class="d-flex gap-3">
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="card-date">
-                        <time datetime="{{$event->date}}">{{$event->date}}</time>
+                        <time datetime="{{ $event->date }}">{{ $event->date }}</time>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
         </div>
 
         <hr>
-        
+
         <div class="container">
             <div class="row">
                 <section class="gallery py-5" id="gallery">
@@ -73,7 +73,8 @@
                                     <!-- first item -->
                                     <div class="col-sm-6">
                                         <div class="gallery-item">
-                                            <img src="{{ asset('images/cards/card-1.png') }}" alt="car" class="img-fluid gallery-img">
+                                            <img src="{{ asset('images/cards/card-1.png') }}" alt="car"
+                                                class="img-fluid gallery-img">
                                         </div>
                                     </div>
                                     <!-- second item -->
@@ -95,11 +96,12 @@
                                     <!-- second item -->
                                     <div class="col-sm-6">
                                         <div class="gallery-item">
-                                            <img src="{{ asset('images/sports.jpg') }}" alt="car" class="img-fluid gallery-img">
+                                            <img src="{{ asset('images/sports.jpg') }}" alt="car"
+                                                class="img-fluid gallery-img">
                                         </div>
                                     </div>
                                 </div>
-            
+
                             </div>
                             <!-- end of second column -->
                         </div>
@@ -123,45 +125,30 @@
 
         <div class="container-fluid px-5">
             <div class="row">
-                <h2><span>2</span> Comments</h2>
+                <h2><span>{{ count($event->comments) }}</span> Comments</h2>
             </div>
 
-            <div class="row mt-5">
-                <div class="col-2 col-md-1">
-                    <img src="{{ asset('images/avatar2.jpeg') }}" alt="" style="border-radius: 50%">
+            @foreach ($event->comments as $comment)
+                <div class="row mt-5">
+                    <div class="col-2 col-md-1">
+                        <img src="{{ asset('storage/avatars/'.$comment->avatar_url) }}" alt="" style="border-radius: 50%">
+                    </div>
+                    <div class="col">
+                        <h3>{{ $comment->firstname}} {{ $comment->lastname }}</h3>
+                        <p>
+                            {{ $comment->pivot->text }}
+                        </p>
+                    </div>
                 </div>
-                <div class="col">
-                    <h3>Paul-henry Ngounou</h3>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero cumque voluptates harum voluptatem,
-                        rem veniam est quisquam dolor suscipit reprehenderit. Blanditiis ut eius impedit vitae ratione dicta
-                        voluptate distinctio obcaecati?
-                    </p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row mt-5">
-                <div class="col-2 col-md-1">
-                    <img src="{{ asset('images/avatar1.webp') }}" alt="" style="border-radius: 50%">
-                </div>
-                <div class="col">
-                    <h3>Sonia Rykiel Toukam</h3>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero cumque voluptates harum voluptatem,
-                        rem veniam est quisquam dolor suscipit reprehenderit. Blanditiis ut eius impedit vitae ratione dicta
-                        voluptate distinctio obcaecati?
-                    </p>
-                </div>
-            </div>
-
-            <hr>
+                <hr>
+            @endforeach
         </div>
 
         <div class="row d-flex px-5" style="margin-top: 7rem;">
             <div class="col">
-                <form class="form">
+                <form class="form" method="POST" action="comment/{{ $event->id }}">
+                    @csrf
+
                     <div class="form-outline">
                         <textarea name="comment" id="comment" cols="50" rows="10" placeholder="Leave a comment" class="p-2"
                             style="border-radius: 0.5rem"></textarea>
