@@ -6,10 +6,10 @@ module.exports = {
 	// Define a prepared statement for creating a category
   create : (data, callBack) => {
     pool.query (
-      " INSERT INTO categories (name, id_articles) VALUES (?, ?)",
+      " INSERT INTO categories (name, article_id) VALUES (?, ?)",
       [
 				data.name,
-				data.id_article
+				data.article_id
 			],
 			(error, results, fields) => {
 				if (error) {
@@ -53,9 +53,10 @@ module.exports = {
 	// Define a prepared statement for updating categories information
 	UpdateCategory : (id, data, callBack) => {
 		pool.query(
-			"UPDATE categories set name=? WHERE id = ?",
+			"UPDATE categories set name=?, article_id=? WHERE id = ?",
 			[
 				data.name,
+				data.article_id,
 				id
 			],
 			(error, results, fields) => {
