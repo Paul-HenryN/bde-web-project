@@ -90,4 +90,24 @@ class CategoryController extends Controller
     {
         //
     }
+
+    /**
+     * Search in the categories
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search($id)
+    {
+        $search = $request->search;
+
+        $categories = Category::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->get();
+
+        return view('shop.search', [
+            'categories' => $categories,
+            'search' => $search
+        ]);
+    }
 }

@@ -90,4 +90,25 @@ class ArticleController extends Controller
     {
         // 
     }
+
+    /**
+     * Search in the articles
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search($id)
+    {
+        $search = $request->search;
+
+        $articles = Article::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+
+        return view('shop.search', [
+            'articles' => $articles,
+            'search' => $search
+        ]);
+    }
 }
