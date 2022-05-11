@@ -6,3 +6,8 @@ h1 {
     color: var(--clr-neutral-200);
     margin: 0;
 }
+
+.btn-disabled {
+    pointer-events: none;
+    opacity:0.5;
+}
