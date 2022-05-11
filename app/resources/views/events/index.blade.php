@@ -9,7 +9,6 @@
     <div class="container-fluid px-5" style="margin-block: 10rem">
         <div class="row mb-5">
             <div class="col">
-                <h1>Events</h1>
             </div>
 
             <div class="col-12 col-md-6 mt-5 mt-md-0">

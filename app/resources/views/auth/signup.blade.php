@@ -14,13 +14,13 @@
           <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
         </div> -->
 
-        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5 mb-5">
 
-          <form method="POST" style="width: 23rem;" enctype="multipart/form-data">
+          <form method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-              <h1 class="">Join us</h1>
+              <h1 class="">Register</h1>
             </div>
 
             <div class="divider d-flex align-items-center my-4"></div>

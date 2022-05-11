@@ -45,13 +45,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="caption">
-                            <h6>Hello Visitor</h6>
-                            <h2>Welcome to Our BDE Website</h2>
-                            <p>This is a BDE Website provided by <a rel="nofollow"
+                            <h1>Welcome to Our BDE Website</h1>
+                            <p>
+                                This is a BDE Website provided by <a rel="nofollow"
                                     href="https://trello.com/b/RgoXLC0u/bde-website" target="_blank">Members of Group 7
                                 </a>. This is a one of the best layout. The video background is taken from Pexels website, a
                                 group of young Ucac-Icam Students by <a rel="nofollow" href=""
-                                    target="_blank">Pressmaster</a>.</p>
+                                    target="_blank">Pressmaster</a>.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -65,12 +66,12 @@
     <section class="upcoming-meetings" id="meetings">
         <div class="container-fluid px-5">
             <div class="row gy-5 gx-4">
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/goodies.png') }}" alt="Card image cap">
 
                         <div class="card-body">
-                            <h2 class="card-title">BDE Shop</h2>
+                            <h3 class="card-title">BDE Shop</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the
                                 bulk of the card's content.</p>
                             <a href="/shop" class="btn btn-outline btn-round mt-4">See</a>
@@ -78,12 +79,12 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/events.png') }}" alt="Card image cap">
 
                         <div class="card-body">
-                            <h2 class="card-title">Events</h2>
+                            <h3 class="card-title">Events</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the
                                 bulk of the card's content.</p>
                             <a href="/events" class="btn btn-outline btn-round mt-4">See</a>
@@ -91,12 +92,12 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-5.png') }}" alt="Card image cap">
 
                         <div class="card-body">
-                            <h2 class="card-title">Programs</h2>
+                            <h3 class="card-title">Programs</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the
                                 bulk of the card's content.</p>
                             <a href="" class="btn btn-outline btn-round mt-4">See</a>
@@ -104,12 +105,12 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-4.png') }}" alt="Card image cap">
 
                         <div class="card-body">
-                            <h2 class="card-title">Clubs</h2>
+                            <h3 class="card-title">Clubs</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the
                                 bulk of the card's content.</p>
                             <a href="#" class="btn btn-outline btn-round mt-4">See</a>
@@ -117,12 +118,12 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-3.png') }}" alt="Card image cap">
 
                         <div class="card-body">
-                            <h2 class="card-title">Sports</h2>
+                            <h3 class="card-title">Sports</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the
                                 bulk of the card's content.</p>
                             <a href="#" class="btn btn-outline btn-round mt-4">See</a>
@@ -130,12 +131,12 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-4.png') }}" alt="Card image cap">
 
                         <div class="card-body">
-                            <h2 class="card-title">Restaurant</h2>
+                            <h3 class="card-title">Restaurant</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the
                                 bulk of the card's content.</p>
                             <a href="#" class="btn btn-outline btn-round mt-4">See</a>
@@ -147,20 +148,26 @@
     </section>
 
 
-    <section class="about-us" style="margin-bottom: 20rem">        
+    <section class="about-us" style="margin-bottom: 20rem">
         <div class="container-fluid px-0">
+            <div class="row g-0 mb-5">
+                <div class="col d-flex justify-content-center">
+                    <h2>About us</h2>
+                </div>
+            </div>
+
             <div class="row g-0">
                 <div class="col-12 col-md-6">
-                    <img src="{{asset('images/summary.jpg')}}" alt="">
+                    <img src="{{ asset('images/summary.jpg') }}" alt="">
                 </div>
 
                 <div class="col-12 col-md-6 p-5" style="background: var(--clr-neutral-200);">
                     <h3 class="mb-5">BDE in one word</h3>
 
-                    <p style="color: var(--clr-neutral-100);">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis mollitia 
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis mollitia
                         similique optio earum, aspernatur,
-                        cum corporis ratione ab commodi sunt consectetur autem ad perferendis iure in. 
+                        cum corporis ratione ab commodi sunt consectetur autem ad perferendis iure in.
                         Nisi, nulla quam.
                     </p>
 
@@ -173,9 +180,9 @@
                     <h3 class="mb-5">Activities</h3>
 
                     <p style="color: var(--clr-neutral-100);">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis mollitia 
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis mollitia
                         similique optio earum, aspernatur,
-                        cum corporis ratione ab commodi sunt consectetur autem ad perferendis iure in. 
+                        cum corporis ratione ab commodi sunt consectetur autem ad perferendis iure in.
                         Nisi, nulla quam.
                     </p>
 
@@ -183,7 +190,7 @@
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <img src="{{asset('images/apply-bg.jpg')}}" alt="">
+                    <img src="{{ asset('images/apply-bg.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -191,12 +198,13 @@
 
     <section class="our-courses" id="courses">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading" align="center">
-                        <h2>Testimonials</h2>
-                    </div>
+            <div class="row mb-5">
+                <div class="col d-flex justify-content-center">
+                    <h2>Testimonials</h2>
                 </div>
+            </div>
+
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="owl-courses-item owl-carousel ">
                         <div class="item">
@@ -204,7 +212,7 @@
                                 class="wdn-strech rounded-corners">
                             <div class="down-content">
                                 <h4>Darryl</h4>
-                                <h4>"The product is so cool and creates so much value"</h4>
+                                <p>"The product is so cool and creates so much value"</p>
                                 <div class="info">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center">
@@ -229,7 +237,7 @@
                                 class="wdn-strech rounded-corners">
                             <div class="down-content">
                                 <h4>Paul-Henry</h4>
-                                <h4>"The product is so cool and creates so much value"</h4>
+                                <p>"The product is so cool and creates so much value"</p>
                                 <div class="info">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center">
@@ -254,7 +262,7 @@
                                 class="wdn-strech rounded-corners">
                             <div class="down-content">
                                 <h4>Sonia</h4>
-                                <h4>"The product is so cool and creates so much value"</h4>
+                                <p>"The product is so cool and creates so much value"</p>
                                 <div class="info">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center">
@@ -279,7 +287,7 @@
                                 class="wdn-strech rounded-corners">
                             <div class="down-content">
                                 <h4>Faris</h4>
-                                <h4>"The product is so cool and creates so much value"</h4>
+                                <p>"The product is so cool and creates so much value"</p>
                                 <div class="info">
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-center">
@@ -304,68 +312,17 @@
         </div>
     </section>
 
-    <!-- <section class="our-facts">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-lg-6">
-                                <div class="row">
-                                  <div class="col-lg-12">
-                                    <h2>A Few Facts About Our University</h2>
-                                  </div>
-                                  <div class="col-lg-6">
-                                    <div class="row">
-                                      <div class="col-12">
-                                        <div class="count-area-content percentage">
-                                          <div class="count-digit">94</div>
-                                          <div class="count-title">Succesed Students</div>
-                                        </div>
-                                      </div>
-                                      <div class="col-12">
-                                        <div class="count-area-content">
-                                          <div class="count-digit">126</div>
-                                          <div class="count-title">Current Teachers</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-6">
-                                    <div class="row">
-                                      <div class="col-12">
-                                        <div class="count-area-content new-students">
-                                          <div class="count-digit">2345</div>
-                                          <div class="count-title">New Students</div>
-                                        </div>
-                                      </div>
-                                      <div class="col-12">
-                                        <div class="count-area-content">
-                                          <div class="count-digit">32</div>
-                                          <div class="count-title">Awards</div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-6 align-self-center">
-                                <div class="video">
-                                  <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="assets/images/play-icon.png" alt=""></a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </section> -->
-
-    <section class="gallery py-5" id="gallery">
+    <section class="gallery" id="gallery">
         <div class="container">
             <!-- section title -->
             <div class="row mb-5">
-                <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+                <div class="col d-flex flex-wrap justify-content-center">
                     <h2>Gallery</h2>
                 </div>
             </div>
             <!-- end of section title -->
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 mb-5 mb-sm-0">
                     <div class="gallery-item">
                         <img src="{{ asset('images/clubs.jpg') }}" alt="car" class="img-fluid gallery-img">
                     </div>
@@ -374,13 +331,14 @@
                 <div class="col-sm-6 d-flex flex-column justify-content-between">
                     <div class="row">
                         <!-- first item -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 mb-5 mb-sm-0">
                             <div class="gallery-item">
-                                <img src="{{ asset('images/cards/card-1.png') }}" alt="car" class="img-fluid gallery-img">
+                                <img src="{{ asset('images/cards/card-1.png') }}" alt="car"
+                                    class="img-fluid gallery-img">
                             </div>
                         </div>
                         <!-- second item -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 mb-5 mb-sm-0">
                             <div class="gallery-item">
                                 <img src="{{ asset('images/cards/card-5.png') }}" alt="car"
                                     class="img-fluid gallery-img">
@@ -389,14 +347,13 @@
                     </div>
                     <div class="row">
                         <!-- first item -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 mb-5 mb-sm-0">
                             <div class="gallery-item">
-                                <img src="{{ asset('images/summary.jpg') }}" alt="car"
-                                    class="img-fluid gallery-img">
+                                <img src="{{ asset('images/summary.jpg') }}" alt="car" class="img-fluid gallery-img">
                             </div>
                         </div>
                         <!-- second item -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 mb-5 mb-sm-0">
                             <div class="gallery-item">
                                 <img src="{{ asset('images/sports.jpg') }}" alt="car" class="img-fluid gallery-img">
                             </div>
@@ -414,7 +371,7 @@
 @section('scripts')
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    
+
     <script src="{{ asset('js/owl-carousel.js') }}"></script>
     <script src="{{ asset('js/lightbox.js') }}"></script>
     <script src="{{ asset('js/tabs.js') }}"></script>

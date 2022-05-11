@@ -75,7 +75,7 @@
                     <div class="container-fluid">
                         <!-- section title -->
                         <div class="row mb-5">
-                            <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+                            <div class="col d-flex flex-wrap justify-content-center">
                                 <h2>Gallery</h2>
                             </div>
                         </div>
