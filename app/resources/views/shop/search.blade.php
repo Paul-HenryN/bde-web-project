@@ -1,3 +1,14 @@
+@extends('templates.master')
+
+@section('styles')
+@endsection
+
+@section('content')
+@endsection
+
+@section('scripts')
+@endsection
+
 <!DOCTYPE html>
 <html lang="en">
    <head>

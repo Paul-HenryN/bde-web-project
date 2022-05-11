@@ -313,8 +313,17 @@ option {
 .btn-like-bg:visited,
 .btn-like-bg:hover,
 .btn-like-bg:focus,
-.btn--like-bg:hover {
+.btn-like-bg:hover {
     background-color: var(--clr-accent-100);
+    color: var(--clr-neutral-100);
+}
+.btn-cart,
+.btn-cart:link,
+.btn-cart:visited,
+.btn-cart:hover,
+.btn-cart:focus,
+.btn-cart:hover {
+    background-color: var(--clr-primary);
     color: var(--clr-neutral-100);
 }
 
@@ -399,3 +408,4 @@ time {
     left: 50%;
     margin-bottom: -50px;
 }
+

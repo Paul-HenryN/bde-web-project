@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Fjalla+One&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
@@ -27,6 +27,7 @@
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
+            
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
@@ -65,6 +66,7 @@
             </div>
         </div>
     </header>
+    @yield('under-header')
     <!-- ***** Header Area End ***** -->
 
     <main>
@@ -151,8 +153,8 @@
         </div>
     </footer>
 
-    <script src="{{ asset('js/isotope.min.js') }}"></script>
     @yield('scripts')
+    <script src="{{ asset('js/isotope.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 

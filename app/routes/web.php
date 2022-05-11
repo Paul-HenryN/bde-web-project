@@ -7,6 +7,7 @@ use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ShopController;
 
 
 /*
@@ -25,28 +26,6 @@ Route::get('/', function () {
 });
 
 require __DIR__.'/auth.php';
-
-/**
- * Commenting
- */
-Route::post('/events/comment/{event_id}', [CommentController::class, 'store'])
-    ->middleware('auth');
-
-/**
- * Liking / Disliking
- */
-Route::get('/events/like/{event_id}', [LikeController::class, 'store'])
-    ->middleware('auth');
-Route::get('/events/dislike/{event_id}', [LikeController::class, 'destroy'])
-    ->middleware('auth');
-
-/**
- * Subscribing / Unsubscribing
- */
-Route::get('/events/subscribe/{event_id}', [SubscriptionController::class, 'store'])
-    ->middleware('auth');
-Route::get('/events/unsubscribe/{event_id}', [SubscriptionController::class, 'destroy'])
-    ->middleware('auth');
 
 
 /**
@@ -74,3 +53,32 @@ Route::post('/articles/search', [ArticleController::class, 'search']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 Route::post('/categories/search', [CategoryController::class, 'search']);
+
+/**
+ * Shop
+ */
+Route::get('/shop', [ShopController::class, 'index']);
+
+/**
+ * Commenting
+ */
+Route::post('/events/comment/{event_id}', [CommentController::class, 'store'])
+    ->middleware('auth');
+
+/**
+ * Liking / Disliking
+ */
+Route::get('/events/like/{event_id}', [LikeController::class, 'store'])
+    ->middleware('auth');
+Route::get('/events/dislike/{event_id}', [LikeController::class, 'destroy'])
+    ->middleware('auth');
+
+/**
+ * Subscribing / Unsubscribing
+ */
+Route::get('/events/subscribe/{event_id}', [SubscriptionController::class, 'store'])
+    ->middleware('auth');
+Route::get('/events/unsubscribe/{event_id}', [SubscriptionController::class, 'destroy'])
+    ->middleware('auth');
+
+

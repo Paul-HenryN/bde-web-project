@@ -1,5 +1,7 @@
 <!-- Display a listing of the events -->
-@extends('templates.master')
+@extends('templates.with-banner')
+
+@section('page-title', 'Events')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/events.css') }}">
@@ -55,17 +57,19 @@
                                         <i class="fa-solid fa-heart mx-1"></i>
                                     </a>
                                 @endif
-
-                                @if (Auth::user() && Auth::user()->subscriptions->contains($event))
-                                    <a href="/events/unsubscribe/{{ $event->id }}"
-                                        class="btn btn-circ btn-shadow btn-subscribe">
-                                        <i class="fa-solid fa-minus mx-1"></i>
-                                    </a>
-                                @else
-                                    <a href="/events/subscribe/{{ $event->id }}"
-                                        class="btn btn-circ btn-shadow btn-subscribe">
-                                        <i class="fa-solid fa-plus mx-1"></i>
-                                    </a>
+                                
+                                @if (strtotime($event->date) >= strtotime(date('y-m-d')))
+                                    @if (Auth::user() && Auth::user()->subscriptions->contains($event))
+                                        <a href="/events/unsubscribe/{{ $event->id }}"
+                                            class="btn btn-circ btn-shadow btn-subscribe">
+                                            <i class="fa-solid fa-minus mx-1"></i>
+                                        </a>
+                                    @else
+                                        <a href="/events/subscribe/{{ $event->id }}"
+                                            class="btn btn-circ btn-shadow btn-subscribe">
+                                            <i class="fa-solid fa-plus mx-1"></i>
+                                        </a>
+                                    @endif
                                 @endif
                             </div>
 

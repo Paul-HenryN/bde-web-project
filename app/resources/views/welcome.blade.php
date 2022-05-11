@@ -1,8 +1,6 @@
 @extends('templates.master')
 
 @section('styles')
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
@@ -118,6 +116,32 @@
                     </div>
                 </div>
 
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ asset('images/cards/card-3.png') }}" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h3 class="card-title">Sports</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline btn-round mt-4">See</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ asset('images/cards/card-4.png') }}" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h3 class="card-title">Restaurant</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline btn-round mt-4">See</a>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-3.png') }}" alt="Card image cap">

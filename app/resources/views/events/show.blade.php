@@ -69,78 +69,80 @@
 
         <hr>
 
+        @if (strtotime($event->date) <= strtotime(date('y-m-d')))
         <div class="container-fluid">
-            <div class="row">
-                <section class="gallery py-5" id="gallery">
-                    <div class="container-fluid">
-                        <!-- section title -->
-                        <div class="row mb-5">
-                            <div class="col d-flex flex-wrap justify-content-center">
-                                <h2>Gallery</h2>
-                            </div>
-                        </div>
-                        <!-- end of section title -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="gallery-item">
-                                    <img src="{{ asset('images/clubs.jpg') }}" alt="car" class="img-fluid gallery-img">
+                <div class="row">
+                    <section class="gallery py-5" id="gallery">
+                        <div class="container-fluid">
+                            <!-- section title -->
+                            <div class="row mb-5">
+                                <div class="col d-flex flex-wrap justify-content-center">
+                                    <h2>Gallery</h2>
                                 </div>
                             </div>
-                            <!-- end of first column -->
-                            <div class="col-sm-6 d-flex flex-column justify-content-between">
-                                <div class="row">
-                                    <!-- first item -->
-                                    <div class="col-sm-6">
-                                        <div class="gallery-item">
-                                            <img src="{{ asset('images/cards/card-1.png') }}" alt="car"
-                                                class="img-fluid gallery-img">
-                                        </div>
-                                    </div>
-                                    <!-- second item -->
-                                    <div class="col-sm-6">
-                                        <div class="gallery-item">
-                                            <img src="{{ asset('images/cards/card-5.png') }}" alt="car"
-                                                class="img-fluid gallery-img">
-                                        </div>
+                            <!-- end of section title -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="gallery-item">
+                                        <img src="{{ asset('images/clubs.jpg') }}" alt="car"
+                                            class="img-fluid gallery-img">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <!-- first item -->
-                                    <div class="col-sm-6">
-                                        <div class="gallery-item">
-                                            <img src="{{ asset('images/summary.jpg') }}" alt="car"
-                                                class="img-fluid gallery-img">
+                                <!-- end of first column -->
+                                <div class="col-sm-6 d-flex flex-column justify-content-between">
+                                    <div class="row">
+                                        <!-- first item -->
+                                        <div class="col-sm-6">
+                                            <div class="gallery-item">
+                                                <img src="{{ asset('images/cards/card-1.png') }}" alt="car"
+                                                    class="img-fluid gallery-img">
+                                            </div>
+                                        </div>
+                                        <!-- second item -->
+                                        <div class="col-sm-6">
+                                            <div class="gallery-item">
+                                                <img src="{{ asset('images/cards/card-5.png') }}" alt="car"
+                                                    class="img-fluid gallery-img">
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- second item -->
-                                    <div class="col-sm-6">
-                                        <div class="gallery-item">
-                                            <img src="{{ asset('images/sports.jpg') }}" alt="car"
-                                                class="img-fluid gallery-img">
+                                    <div class="row">
+                                        <!-- first item -->
+                                        <div class="col-sm-6">
+                                            <div class="gallery-item">
+                                                <img src="{{ asset('images/summary.jpg') }}" alt="car"
+                                                    class="img-fluid gallery-img">
+                                            </div>
+                                        </div>
+                                        <!-- second item -->
+                                        <div class="col-sm-6">
+                                            <div class="gallery-item">
+                                                <img src="{{ asset('images/sports.jpg') }}" alt="car"
+                                                    class="img-fluid gallery-img">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
+                                </div>
+                                <!-- end of second column -->
                             </div>
-                            <!-- end of second column -->
+                            <!-- end of row -->
                         </div>
-                        <!-- end of row -->
-                    </div>
-                </section>
-            </div>
+                    </section>
+                </div>
 
-            <div class="row px-4">
-                <form action="" class="form">
-                    <div class="mb-4">
-                        <label for="formFile" class="form-label">You can upload photos for this event</label>
-                        <input class="form-control" type="file" id="formFile" accept=".jpg,.png,.gif">
-                    </div>
-                </form>
-            </div>
+                <div class="row px-4">
+                    <form action="" class="form">
+                        <div class="mb-4">
+                            <label for="formFile" class="form-label">You can upload photos for this event</label>
+                            <input class="form-control" type="file" id="formFile" accept=".jpg,.png,.gif">
+                        </div>
+                    </form>
+                </div>
         </div>
 
-
         <hr>
+        @endif
 
         <div class="container-fluid px-5">
             <div class="row">
