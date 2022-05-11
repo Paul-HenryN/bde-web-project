@@ -27,7 +27,6 @@
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
-            
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
@@ -65,6 +64,8 @@
                 </div>
             </div>
         </div>
+
+        @yield('sub-nav')
     </header>
     @yield('under-header')
     <!-- ***** Header Area End ***** -->
@@ -153,8 +154,8 @@
         </div>
     </footer>
 
-    @yield('scripts')
     <script src="{{ asset('js/isotope.min.js') }}"></script>
+    @yield('scripts')
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 </body>
