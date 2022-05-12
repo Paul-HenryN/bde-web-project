@@ -8,7 +8,7 @@
 
     <div style="max-width: 320px; margin: 0 auto; padding: 20px; background: #fff;">
       <h3>Message sent  via  Google :</h3>
-        <div>{{ $data['body'] }}</div>
+        <h4>{{ $data['body'] }}</h4>
     </div>
 
   </body>

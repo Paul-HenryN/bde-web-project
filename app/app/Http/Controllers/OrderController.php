@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 
+// Import classes for mail
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+use App\Mail\Email;
+
 class OrderController extends Controller
 {
     /**
@@ -38,7 +43,17 @@ class OrderController extends Controller
         Order::create([
             'user_id' => $request->user_id,
             'article_id' => $request->article_id,
+            'quantity' => $request->quantity
         ]);
+
+        $user = User::find($request->user_id);
+        
+        $data = [
+            'body' => "The student $user->firstname  $user->lastname orders an article."
+        ];
+
+        Mail::to("bdedouala@gmail.com")->send(new Email($data));
+		return redirect ('/');
     }
 
     /**
@@ -92,21 +107,8 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function Publish($event_id) 
+    public function order($event_id) 
     {
-        $event = Event::find($event_id);
-        $data = [
-            'body' => 'Great Job ! Your suggestion was approved.'
-        ];
-
-        $event->is_published = true;
-        $event->save();
-
-        $event = Event::find($event_id);
-		$user = User::find($event->user_id);
-
-		Mail::to($user->email)->send(new Email($data));
-
-		return back()->withText("Email sent successfully");
+        //
     }
 }
