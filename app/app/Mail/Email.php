@@ -31,7 +31,8 @@ class Email extends Mailable
      */
     public function build()
     {
-        return $this->subject("Suggestion Reply") // The content or subject
+        return $this->from("bdedouala@gmail.com")
+                           ->subject("Suggestion Reply") // The content or subject
                            ->view('emails.mail'); // The view;
     }
 }
