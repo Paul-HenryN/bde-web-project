@@ -391,33 +391,13 @@
         </div>
     </section>
 
-    <div class="fixed-bottom p-4">
-    <div class="toast bg-dark text-white w-100 mw-100" role="alert" data-autohide="false">
-        <div class="toast-body p-4 d-flex flex-column">
-            <h4>Cookie Warning</h4>
-            <p>
-            This website stores data such as cookies to enable site functionality including analytics and personalization. By using this website, you automatically accept that we use cookies. 
-            </p>
-            <div class="ml-auto">
-                <button type="button" class="btn btn-outline-light mr-3" id="btnDeny">
-                    Deny
-                </button>
-                <button type="button" class="btn btn-light" id="btnAccept">
-                    Accept
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+    <div id="cookiePopup">
+        <h4>Cookie Consent</h4>
+        <p> . By continuing to browse this site, you agree to the use of cookies to give you the best possible web experience.If you want to know more and access the cookie settings, click on this link<a href="#">Cookie Policy</a></p>
+        <button id="acceptCookie">Agree</button> 
+        <button id="acceptCookie">Deny</button> 
 
-<!-- page content -->
-<div class="container py-4">
-    <h1 class="font-weight-light"> Page Content Here.... </h1>
-    <p>This is an example of using the Bootstrap 4 Toast component as a cookie warning pop-up.</p>
-    <button type="button" class="btn btn-outline-light mr-3" id="btnReset">
-        Reset Demo
-    </button>
-</div>
+    </div>
 
 @endsection
 
@@ -431,6 +411,8 @@
     <script src="{{ asset('js/video.js') }}"></script>
     <script src="{{ asset('js/slick-slider.js') }}"></script>
     <script src="{{ asset('js/cookies.js') }}"></script>
+
+    
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
