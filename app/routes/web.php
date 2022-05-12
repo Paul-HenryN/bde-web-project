@@ -95,3 +95,7 @@ Route::put('/admin/validate/{event_id}', [EventController::class, 'publish']);
 
 Route::get('/user/validate/{article_id}', [ArticleController::class, 'show']);
 Route::put('/user/validate/{article_id}', [ArticleController::class, 'show']);
+
+Route::get('/test', function (){
+    return view('paypal.paypal');
+});

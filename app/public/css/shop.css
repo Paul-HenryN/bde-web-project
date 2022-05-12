@@ -71,3 +71,22 @@
 .best-sellers h2 {
     color: var(--clr-neutral-100);
 }
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 9000;
+    opacity: 0.8;
+}
+
+.cart {
+    z-index: 10000;
+    position: fixed;
+    inset: 0;
+    scale: 0.8;
+}
+
+body {
+    position: relative;
+}
