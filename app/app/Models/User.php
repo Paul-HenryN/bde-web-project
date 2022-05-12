@@ -23,7 +23,7 @@ class User extends \TCG\Voyager\Models\User
         'email',
         'location',
         'password',
-        'avatar_url',
+        'avatar',
         'role_id'
     ];
 
@@ -64,5 +64,10 @@ class User extends \TCG\Voyager\Models\User
     public function subscriptions()
     {
         return $this->belongsToMany(Event::class, 'subscriptions');
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Article::class, 'orders');
     }
 }

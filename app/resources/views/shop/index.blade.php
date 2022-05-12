@@ -37,8 +37,8 @@
                                                         </div>
                                                         <p>{{ $article->description }}</p>
                                                         <div class="mt-3">
-                                                            <a href="#" class="btn btn-circ btn-cart" title="Add to cart"><i
-                                                                    class="fa-solid fa-cart-plus"></i></a>
+                                                            <button href="#" id="{{ $article->id }}"" class="btn btn-circ btn-cart" title="Add to cart"><i
+                                                                    class="fa-solid fa-cart-plus"></i></button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -55,7 +55,7 @@
             @endif
         @endforeach
 
-        <div class="row shop-section best-sellers">
+        {{-- <div class="row shop-section best-sellers">
             <div id="main_slider" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -65,7 +65,7 @@
                                 <div class="row">
                                     @foreach ($category->articles as $article)
                                         <div class="col-lg-4 col-sm-4">
-                                            <div class="box_main">
+                                            <div class="box_main" id="{{ $article->id }}">
                                                 <h4 class="shirt_text">{{ $article->name }}</h4>
                                                 <p class="price_text">{{ $article->price }} FCFA</span>
                                                 </p>
@@ -86,12 +86,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 
 @section('scripts')
     <!-- Javascript files-->
+    <script src="{{ asset('js/order.js') }}"></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
@@ -115,10 +116,10 @@
         </div>
 
         <div class="col d-flex justify-content-end">
-            <a href="">
+            <button href="">
                 Cart
                 <li class="fa-solid fa-cart-plus"></li>
-            </a>
+            </button>
         </div>
     </div>
 @endsection

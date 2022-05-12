@@ -163,7 +163,7 @@
                                 </div>
 
                                 <div class="card-date">
-                                    <time datetime="2022-06-06">{{ $event->date }}</time>
+                                    <time datetime="{{ $event->date }}">{{ $event->date }}</time>
                                 </div>
                             </div>
                         </div>

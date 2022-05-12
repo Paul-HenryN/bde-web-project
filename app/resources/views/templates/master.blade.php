@@ -154,10 +154,10 @@
         </div>
     </footer>
 
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/isotope.min.js') }}"></script>
     @yield('scripts')
     <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
 </body>
 
 </html>

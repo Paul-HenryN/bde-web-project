@@ -39,8 +39,6 @@ class OrderController extends Controller
             'user_id' => $request->user_id,
             'article_id' => $request->article_id,
         ]);
-
-        return redirect('/');
     }
 
     /**

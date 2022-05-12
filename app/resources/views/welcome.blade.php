@@ -411,8 +411,7 @@
 </div>
 
 <!-- page content -->
-<div class="container py-4">
-    <h1 class="font-weight-light"> Page Content Here.... </h1>
+<div class="container py-4 bg-dark">
     <p>This is an example of using the Bootstrap 4 Toast component as a cookie warning pop-up.</p>
     <button type="button" class="btn btn-outline-light mr-3" id="btnReset">
         Reset Demo
