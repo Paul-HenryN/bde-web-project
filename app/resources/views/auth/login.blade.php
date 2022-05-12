@@ -20,6 +20,11 @@
 
           <div class="divider d-flex align-items-center my-4"></div>
 
+          <!-- Validation Errors -->
+          <div class="row">
+              <x-auth-validation-errors class="mb-4" :errors="$errors" style="color : red; font-weight : bold"/>
+            </div>
+
           <!-- Email input -->
           <div class="form-outline mb-3">
             <label for="email">E-mail address</label>
