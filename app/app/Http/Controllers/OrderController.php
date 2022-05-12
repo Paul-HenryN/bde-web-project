@@ -39,8 +39,6 @@ class OrderController extends Controller
             'user_id' => $request->user_id,
             'article_id' => $request->article_id,
         ]);
-
-        return redirect('/');
     }
 
     /**
@@ -86,5 +84,29 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Send an email while an user 
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function Publish($event_id) 
+    {
+        $event = Event::find($event_id);
+        $data = [
+            'body' => 'Great Job ! Your suggestion was approved.'
+        ];
+
+        $event->is_published = true;
+        $event->save();
+
+        $event = Event::find($event_id);
+		$user = User::find($event->user_id);
+
+		Mail::to($user->email)->send(new Email($data));
+
+		return back()->withText("Email sent successfully");
     }
 }
