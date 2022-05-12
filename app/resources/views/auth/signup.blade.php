@@ -25,6 +25,11 @@
 
             <div class="divider d-flex align-items-center my-4"></div>
 
+            <div class="row">
+              <!-- Validation Errors -->
+              <x-auth-validation-errors class="mb-4" :errors="$errors" style="color : red; font-weight : bold"/>
+            </div>
+
             <div class="form-group mb-3">
               <div class="form-outline">
                 <label class="form-label" for="name">First name</label>
