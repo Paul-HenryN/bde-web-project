@@ -34,7 +34,7 @@ class Event extends Model
 
     public function comments()
     {
-        return $this->belongsToMany(User::class, 'comments')->withPivot('text');
+        return $this->belongsToMany(User::class, 'comments')->withPivot('text', 'created_at');
     }
 
     public function likes()

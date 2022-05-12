@@ -57,7 +57,7 @@
                                         <i class="fa-solid fa-heart mx-1"></i>
                                     </a>
                                 @endif
-                                
+
                                 @if (strtotime($event->date) >= strtotime(date('y-m-d')))
                                     @if (Auth::user() && Auth::user()->subscriptions->contains($event))
                                         <a href="/events/unsubscribe/{{ $event->id }}"
@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="card-body">
-                                <h2 class="card-title">{{ $event->name }}</h2>
+                                <h3 class="card-title">{{ $event->name }}</h3>
                                 <p class="card-text">{{ $event->description }}</p>
 
                                 <div class="card-meta d-flex justify-content-between mt-3">
@@ -99,6 +99,77 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+
+    <div class="container-fluid most-liked">
+        <div class="row mb-5">
+            <div class="col d-flex justify-content-center">
+                <h2>Most liked</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach ($events as $event)
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card">
+                        <a href="/events/{{ $event->id }}">
+                            <img class="card-img-top" src="{{ asset($event->image_url) }}" alt="Card image cap">
+                        </a>
+
+                        <div class="card-cta d-flex gap-2">
+                            @if (Auth::user() && Auth::user()->likes->contains($event))
+                                <a href="/events/dislike/{{ $event->id }}" class="btn btn-circ btn-shadow btn-like"
+                                    title="Dislike">
+                                    <i class="fa-solid fa-heart-crack mx-1"></i>
+                                </a>
+                            @else
+                                <a href="/events/like/{{ $event->id }}" class="btn btn-circ btn-shadow btn-like"
+                                    title="Like">
+                                    <i class="fa-solid fa-heart mx-1"></i>
+                                </a>
+                            @endif
+
+                            @if (strtotime($event->date) >= strtotime(date('y-m-d')))
+                                @if (Auth::user() && Auth::user()->subscriptions->contains($event))
+                                    <a href="/events/unsubscribe/{{ $event->id }}"
+                                        class="btn btn-circ btn-shadow btn-subscribe">
+                                        <i class="fa-solid fa-minus mx-1"></i>
+                                    </a>
+                                @else
+                                    <a href="/events/subscribe/{{ $event->id }}"
+                                        class="btn btn-circ btn-shadow btn-subscribe">
+                                        <i class="fa-solid fa-plus mx-1"></i>
+                                    </a>
+                                @endif
+                            @endif
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">{{ $event->name }}</h3>
+                            <p class="card-text">{{ $event->description }}</p>
+
+                            <div class="card-meta d-flex justify-content-between mt-3">
+                                <div class="d-flex gap-3">
+                                    <div class="card-likes">
+                                        {{ count($event->likes) }}
+                                        <i class="fa-solid fa-heart mx-1"></i>
+                                    </div>
+
+                                    <div class="card-comments">
+                                        {{ count($event->comments) }}
+                                        <i class="fa-solid fa-comment mx-1"></i>
+                                    </div>
+                                </div>
+
+                                <div class="card-date">
+                                    <time datetime="2022-06-06">{{ $event->date }}</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

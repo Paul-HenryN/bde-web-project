@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'location' => $request->location,
             'password' => Hash::make($request->password),
-            'avatar_url' => $request->avatar->hashName(),
+            'avatar' => $request->avatar->hashName(),
             'role_id' => 3
         ]);
 

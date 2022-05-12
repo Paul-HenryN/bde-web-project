@@ -14,11 +14,6 @@
     padding-bottom: 0px;
 }
 
-/* banner section end */
-
-
-/* fashion section start */
-
 .fashion_section {
     width: 100%;
     float: left;
@@ -46,7 +41,6 @@
     border-radius: 0.5rem;
 }
 
-
 .tshirt_img {
     width: 100%;
     text-align: center;
@@ -61,7 +55,7 @@
 .sub-nav {
     background: var(--clr-neutral-100);
     box-shadow: 0 8px 11px rgba(0, 0, 0, 0.25);
-    padding-inline: 7%;
+    padding-inline: 10%;
 }
 .sub-nav a {
     color: var(--clr-neutral-200);

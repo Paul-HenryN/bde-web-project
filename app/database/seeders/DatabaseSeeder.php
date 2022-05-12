@@ -15,16 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'name' => 'bde',
-        ]);
-
-        DB::table('roles')->insert([
-            'name' => 'employee',
-        ]);
-
-        DB::table('roles')->insert([
-            'name' => 'student',
+        $this->call([
+            VoyagerDatabaseSeeder::class,
         ]);
     }
 }

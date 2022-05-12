@@ -1,19 +1,17 @@
 <!-- Display a listing of the events -->
 
-@extends('templates.master')
+@extends('templates.with-banner')
+
+@section('page-title')
+    Search results for "{{ $search }}"
+@endsection
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/events.css') }}">
 @endsection
 
 @section('content')
-    <div class="container-fluid px-5" style="margin-block: 10rem">
-        <div class="row mb-5">
-            <div class="col">
-                <h1>Search results for "{{$search}}"</h1>
-            </div>
-        </div>
-
+    <div class="container-fluid px-5" style="margin-block: 5rem">
         <div class="row mb-4">
             <div class="form-outline">
                 <select name="period" id="period" class="form-select">
@@ -30,13 +28,13 @@
                     <p>No result found.</p>
                 @endif
 
-                @foreach($events as $event)
+                @foreach ($events as $event)
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card">
-                            <a href="/events/{{$event->id}}">
+                            <a href="/events/{{ $event->id }}">
                                 <img class="card-img-top" src="{{ asset($event->image_url) }}" alt="Card image cap">
                             </a>
-                            
+
                             <div class="card-cta d-flex gap-2">
                                 <button href="" class="btn btn-circ btn-shadow btn-like">
                                     <i class="fa-solid fa-heart mx-1"></i>

@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-8">
                     <div class="left-content">
-                        <p>This is Ucac-Icam BDE website.</p>
+                        <p>This is CESI Douala BDE website.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-4">
@@ -64,7 +64,7 @@
     <section class="upcoming-meetings" id="meetings">
         <div class="container-fluid px-5">
             <div class="row gy-5 gx-4">
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/goodies.png') }}" alt="Card image cap">
 
@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/events.png') }}" alt="Card image cap">
 
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-5.png') }}" alt="Card image cap">
 
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-4.png') }}" alt="Card image cap">
 
@@ -116,7 +116,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-3.png') }}" alt="Card image cap">
 
@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-4.png') }}" alt="Card image cap">
 
@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-3.png') }}" alt="Card image cap">
 
@@ -155,7 +155,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-4.png') }}" alt="Card image cap">
 
@@ -176,16 +176,16 @@
         <div class="container-fluid px-0">
             <div class="row g-0 mb-5">
                 <div class="col d-flex justify-content-center">
-                    <h2>About us</h2>
+                    <h2 style="color: var(--clr-neutral-200);">About us</h2>
                 </div>
             </div>
 
             <div class="row g-0">
-                <div class="col-12 col-md-6">
-                    <img src="{{ asset('images/summary.jpg') }}" alt="">
+                <div class="col-12 col-xl-6">
+                    <img src="{{ asset('images/summary.jpg') }}">
                 </div>
 
-                <div class="col-12 col-md-6 p-5" style="background: var(--clr-neutral-200);">
+                <div class="col-12 col-xl-6 p-5" style="background: var(--clr-neutral-200);">
                     <h3 class="mb-5">BDE in one word</h3>
 
                     <p>
@@ -200,7 +200,7 @@
             </div>
 
             <div class="row g-0">
-                <div class="col-12 col-md-6 p-5" style="background: var(--clr-accent-200);">
+                <div class="col-12 col-xl-6 p-5" style="background: var(--clr-accent-200);">
                     <h3 class="mb-5">Activities</h3>
 
                     <p style="color: var(--clr-neutral-100);">
@@ -213,7 +213,7 @@
                     <a href="#" class="btn btn-tertiary mt-5">More</a>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-xl-6">
                     <img src="{{ asset('images/apply-bg.jpg') }}" alt="">
                 </div>
             </div>

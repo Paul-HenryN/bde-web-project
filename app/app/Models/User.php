@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -53,7 +53,7 @@ class User extends Authenticatable
 
     public function comments()
     {
-        return $this->belongsToMany(Event::class, 'comments')->withPivot('text');
+        return $this->belongsToMany(Event::class, 'comments')->withPivot('text', 'created_at');
     }
 
     public function likes()

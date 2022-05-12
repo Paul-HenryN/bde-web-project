@@ -19,6 +19,7 @@
     --fs-1: 3rem;
     --fs-2: 2rem;
     --fs-3: 1.5rem;
+    --fs-4: 1.1rem;
     --fs-neutral: 0.9rem;
     --fs-small: 0.5rem;
 }
@@ -203,6 +204,10 @@ h2 {
 
 h3 {
     font-size: var(--fs-3);
+}
+
+h4 {
+    font-size: var(--fs-4);
 }
 
 ::selection {

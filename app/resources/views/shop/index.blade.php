@@ -37,15 +37,14 @@
                                                         </div>
                                                         <p>{{ $article->description }}</p>
                                                         <div class="mt-3">
-                                                            <a href="#" class="btn btn-circ btn-cart"
-                                                                title="Add to cart"><i
+                                                            <a href="#" class="btn btn-circ btn-cart" title="Add to cart"><i
                                                                     class="fa-solid fa-cart-plus"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             @endforeach
 
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -70,20 +69,17 @@
                                                 <h4 class="shirt_text">{{ $article->name }}</h4>
                                                 <p class="price_text">{{ $article->price }} FCFA</span>
                                                 </p>
-                                                <div class="my-3"><img
-                                                        src="{{ asset($article->image_url) }}">
+                                                <div class="my-3"><img src="{{ asset($article->image_url) }}">
                                                 </div>
                                                 <p>{{ $article->description }}</p>
                                                 <div class="mt-3">
-                                                    <a href="#" class="btn btn-circ btn-cart"
-                                                        title="Add to cart"><i
+                                                    <a href="#" class="btn btn-circ btn-cart" title="Add to cart"><i
                                                             class="fa-solid fa-cart-plus"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
 
-                                    
                                 </div>
                             </div>
                         </div>
@@ -105,7 +101,19 @@
 @endsection
 
 @section('sub-nav')
-    <div class="sub-nav row py-3">
+    <div class="sub-nav row py-3 d-flex align-items-center">
+        <div class="col">
+            <form action="/shop/search" method="POST">
+                @csrf
+                
+                <div class="form-outline d-flex gap-3">
+                    <input type="search" id="password" name="search" class="form-control"
+                        placeholder="Find a particular event">
+                    <button type="submit" class="btn btn-secondary btn-round">Search</button>
+                </div>
+            </form>
+        </div>
+
         <div class="col d-flex justify-content-end">
             <a href="">
                 Cart

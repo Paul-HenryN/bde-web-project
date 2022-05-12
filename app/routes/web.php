@@ -81,4 +81,8 @@ Route::get('/events/subscribe/{event_id}', [SubscriptionController::class, 'stor
 Route::get('/events/unsubscribe/{event_id}', [SubscriptionController::class, 'destroy'])
     ->middleware('auth');
 
+Route::post('/shop/search', [ShopController::class, 'search']);
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

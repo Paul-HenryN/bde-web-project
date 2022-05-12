@@ -1,21 +1,57 @@
 <!-- Display a particular event -->
-@extends('templates.master')
+@extends('templates.with-banner')
+
+@section('page-title', $event->name)
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/events.css') }}">
 @endsection
 
 @section('content')
-    <div class="container-fluid px-5" style="margin-block: 10rem">
-        <div class="row gx-5">
+    <div class="container" style="margin-block: 5rem">
+        <div class="row gx-4 py-5">
             <div class="col-12 col-lg-6">
-                <img src="{{ asset($event->image_url) }}" style="border-radius: 0.5rem">
+                <img src="{{ asset($event->image_url) }}" style="border-radius: 0.4rem">
             </div>
 
             <div class="col mt-5 mt-lg-0">
-                <h1 class="mb-4">{{ $event->name }}</h1>
+                <h2 class="mb-4">{{ $event->name }}</h2>
 
                 <p>{{ $event->description }}</p>
+
+                <div class="d-flex gap-2 py-5">
+                    <div class="col-6 col-lg-auto">
+                        @if (Auth::user() && Auth::user()->likes->contains($event))
+                            <a href="/events/dislike/{{ $event->id }}"
+                                class="btn btn-like-bg btn-round d-flex justify-content-center align-items-center gap-2">
+                                <i class="fa-solid fa-heart-crack"></i>
+                                Dislike
+                            </a>
+                        @else
+                            <a href="/events/like/{{ $event->id }}"
+                                class="btn btn-like-bg btn-round d-flex justify-content-center align-items-center gap-2">
+                                <i class="fas fa-heart"></i>
+                                Like
+                            </a>
+                        @endif
+                    </div>
+
+                    <div class="col-6 col-lg-auto">
+                        @if (Auth::user() && Auth::user()->subscriptions->contains($event))
+                            <a href="/events/unsubscribe/{{ $event->id }}"
+                                class="btn btn-subscribe btn-round d-flex justify-content-center align-items-center gap-2">
+                                <i class="fa-solid fa-minus"></i>
+                                Unsubscribe
+                            </a>
+                        @else
+                            <a href="/events/subscribe/{{ $event->id }}"
+                                class="btn btn-subscribe btn-round d-flex justify-content-center align-items-center gap-2">
+                                <i class="fa-solid fa-plus"></i>
+                                Subscribe
+                            </a>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="card-meta d-flex justify-content-between mt-3">
                     <div class="d-flex gap-3">
@@ -37,40 +73,8 @@
             </div>
         </div>
 
-        <div class="row mt-5">
-            <div class="col-6 col-lg-2">
-                @if (Auth::user() && Auth::user()->likes->contains($event))
-                    <a href="/events/dislike/{{ $event->id }}" class="btn btn-like-bg btn-round">
-                        <i class="fa-solid fa-heart-crack"></i>
-                        Dislike
-                    </a>
-                @else
-                    <a href="/events/like/{{ $event->id }}" class="btn btn-like-bg btn-round">
-                        <i class="fas fa-heart"></i>
-                        Like
-                    </a>
-                @endif
-            </div>
-
-            <div class="col-6 col-lg-2">
-                @if (Auth::user() && Auth::user()->subscriptions->contains($event))
-                    <a href="/events/unsubscribe/{{ $event->id }}" class="btn btn-subscribe btn-round">
-                        <i class="fa-solid fa-minus"></i>
-                        Unsubscribe
-                    </a>
-                @else
-                    <a href="/events/subscribe/{{ $event->id }}" class="btn btn-subscribe btn-round">
-                        <i class="fa-solid fa-plus"></i>
-                        Subscribe
-                    </a>
-                @endif
-            </div>
-        </div>
-
-        <hr>
-
         @if (strtotime($event->date) <= strtotime(date('y-m-d')))
-        <div class="container-fluid">
+            <div class="container-fluid">
                 <div class="row">
                     <section class="gallery py-5" id="gallery">
                         <div class="container-fluid">
@@ -82,24 +86,24 @@
                             </div>
                             <!-- end of section title -->
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 mb-5 mb-sm-0">
                                     <div class="gallery-item">
                                         <img src="{{ asset('images/clubs.jpg') }}" alt="car"
                                             class="img-fluid gallery-img">
                                     </div>
                                 </div>
                                 <!-- end of first column -->
-                                <div class="col-sm-6 d-flex flex-column justify-content-between">
+                                <div class="col-sm-6 mb-5 mb-sm-0 d-flex flex-column justify-content-between">
                                     <div class="row">
                                         <!-- first item -->
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 mb-5 mb-sm-0">
                                             <div class="gallery-item">
                                                 <img src="{{ asset('images/cards/card-1.png') }}" alt="car"
                                                     class="img-fluid gallery-img">
                                             </div>
                                         </div>
                                         <!-- second item -->
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 mb-5 mb-sm-0">
                                             <div class="gallery-item">
                                                 <img src="{{ asset('images/cards/card-5.png') }}" alt="car"
                                                     class="img-fluid gallery-img">
@@ -108,14 +112,14 @@
                                     </div>
                                     <div class="row">
                                         <!-- first item -->
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 mb-5 mb-sm-0">
                                             <div class="gallery-item">
                                                 <img src="{{ asset('images/summary.jpg') }}" alt="car"
                                                     class="img-fluid gallery-img">
                                             </div>
                                         </div>
                                         <!-- second item -->
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 mb-5 mb-sm-0">
                                             <div class="gallery-item">
                                                 <img src="{{ asset('images/sports.jpg') }}" alt="car"
                                                     class="img-fluid gallery-img">
@@ -131,33 +135,39 @@
                     </section>
                 </div>
 
-                <div class="row px-4">
+                <div class="row">
                     <form action="" class="form">
                         <div class="mb-4">
-                            <label for="formFile" class="form-label">You can upload photos for this event</label>
+                            <label for="formFile" class="form-label">You can upload photos for this past event</label>
                             <input class="form-control" type="file" id="formFile" accept=".jpg,.png,.gif">
                         </div>
                     </form>
                 </div>
-        </div>
-
-        <hr>
-        @endif
-
-        <div class="container-fluid px-5">
-            <div class="row">
-                <h2><span>{{ count($event->comments) }}</span> Comments</h2>
             </div>
 
+            <hr>
+        @endif
+
+        <div class="container-fluid">
+            <div class="row">
+                <h3><span style="font-size: var(--fs-1);">{{ count($event->comments) }}</span> Comments</h3>
+            </div>
+
+            <hr>
+
             @foreach ($event->comments as $comment)
-                <div class="row mt-5">
+                <div class="row mt-1 gx-3">
                     <div class="col-2 col-md-1">
                         <img src="{{ asset('storage/avatars/' . $comment->avatar_url) }}" alt=""
                             style="border-radius: 50%">
                     </div>
                     <div class="col">
-                        <h3>{{ $comment->firstname }} {{ $comment->lastname }}</h3>
-                        <p>
+                        <div class="d-flex">
+                            <h4>{{ $comment->firstname }} {{ $comment->lastname }}</h4>
+                            &dot;
+                            <time datetime="{{ $comment->pivot->created_at }}">{{ $comment->pivot->created_at }}</time>
+                        </div>
+                        <p class="mt-1">
                             {{ $comment->pivot->text }}
                         </p>
                     </div>
@@ -166,7 +176,7 @@
             @endforeach
         </div>
 
-        <div class="row d-flex px-5" style="margin-top: 7rem;">
+        <div class="row d-flex">
             <div class="col">
                 <form class="form" method="POST" action="/events/comment/{{ $event->id }}">
                     @csrf

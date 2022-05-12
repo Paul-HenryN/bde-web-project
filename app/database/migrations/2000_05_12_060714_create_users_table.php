@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('location');
             $table->string('password');
-            $table->string('avatar_url');
-            $table->foreignId('role_id')->constrained();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

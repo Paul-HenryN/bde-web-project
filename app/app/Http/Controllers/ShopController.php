@@ -87,4 +87,18 @@ class ShopController extends Controller
     {
         //
     }
+
+    public function search(Request $request) {
+        $search = $request->search;
+
+        $articles = Article::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+
+        return view('shop.search', [
+            'articles' => $articles,
+            'search' => $search
+        ]);
+    }
 }
