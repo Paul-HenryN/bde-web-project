@@ -8,11 +8,7 @@
 
     <div style="max-width: 320px; margin: 0 auto; padding: 20px; background: #fff;">
       <h3>Message sent  via  Google :</h3>
-      @if (Auth::user()->role_id == 1)
         <div>{{ $data['body'] }}</div>
-      @else
-        <div>{{ $data['message'] }}</div>
-      @endif
     </div>
 
   </body>

@@ -86,3 +86,12 @@ Route::post('/shop/search', [ShopController::class, 'search']);
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+/**
+ * Mail Sending
+ */
+Route::get('/admin/validate/{event_id}', [EventController::class, 'publish']);
+Route::put('/admin/validate/{event_id}', [EventController::class, 'publish']);
+
+Route::get('/user/validate/{article_id}', [ArticleController::class, 'show']);
+Route::put('/user/validate/{article_id}', [ArticleController::class, 'show']);

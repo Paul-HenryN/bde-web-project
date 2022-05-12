@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 
+// Import classes for mail
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+use App\Mail\Email;
+
 class EventController extends Controller
 {
     /**
@@ -28,7 +33,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.add');
+        //
     }
 
     /**
@@ -132,5 +137,29 @@ class EventController extends Controller
             'events' => $events,
             'search' => $search
         ]);
+    }
+
+    /**
+     * Publish an event and send an email to the user.
+     *
+     * @param  int  $event_id
+     * @return \Illuminate\Http\Response
+     */
+    public function publish($event_id) 
+    {
+        $event = Event::find($event_id);
+        $data = [
+            'body' => 'Great Job ! Your suggestion was approved.'
+        ];
+
+        $event->is_published = true;
+        $event->save();
+
+        $event = Event::find($event_id);
+		$user = User::find($event->user_id);
+
+		Mail::to($user->email)->send(new Email($data));
+
+		return back()->withText("Email sent successfully");
     }
 }
