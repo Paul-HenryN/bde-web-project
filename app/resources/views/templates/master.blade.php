@@ -45,7 +45,7 @@
                             @if (Auth::user())
                                 <li class="d-md-flex gap-2 align-items-center">
                                     <a href="#">{{ Auth::user()->firstname }}</a>
-                                    <img src="{{ asset('storage/avatars/' . Auth::user()->avatar_url) }}"
+                                    <img src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}"
                                         class="d-none d-md-block" style="border-radius: 100%; max-width: 50px;">
                                 </li>
 

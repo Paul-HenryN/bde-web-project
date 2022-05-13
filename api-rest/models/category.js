@@ -6,11 +6,8 @@ module.exports = {
 	// Define a prepared statement for creating a category
   create : (data, callBack) => {
     pool.query (
-      " INSERT INTO categories (name, article_id) VALUES (?, ?)",
-      [
-				data.name,
-				data.article_id
-			],
+      " INSERT INTO categories (name) VALUES (?)",
+      [data.name],
 			(error, results, fields) => {
 				if (error) {
 					return callBack(error);
@@ -39,7 +36,7 @@ module.exports = {
 	// Define a prepared statement for getting categories by user location
 	getCategoriesByLocation : (location, callBack) => {
 		pool.query(
-			"SELECT categories.id, categories.name FROM (categories INNER JOIN orders ON categories.id_articles = orders.id) INNER JOIN users ON orders.id_user = users.id WHERE users.location = ? ORDER BY categories.id ASC",
+			"SELECT categories.id, categories.name FROM (categories INNER JOIN orders) INNER JOIN users ON orders.user_id = users.id WHERE users.location = ? ORDER BY categories.id ASC",
 			[location],
 			(error, results, fields) => {
 				if (error) {
@@ -53,10 +50,9 @@ module.exports = {
 	// Define a prepared statement for updating categories information
 	UpdateCategory : (id, data, callBack) => {
 		pool.query(
-			"UPDATE categories set name=?, article_id=? WHERE id = ?",
+			"UPDATE categories set name=? WHERE id = ?",
 			[
 				data.name,
-				data.article_id,
 				id
 			],
 			(error, results, fields) => {

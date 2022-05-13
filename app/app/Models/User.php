@@ -23,7 +23,7 @@ class User extends \TCG\Voyager\Models\User
         'email',
         'location',
         'password',
-        'avatar_url',
+        'avatar',
         'role_id'
     ];
 
