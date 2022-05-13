@@ -6,15 +6,15 @@ module.exports = {
 	// Define a prepared statement for creating a user
   create : (data, callBack) => {
     pool.query (
-      " INSERT INTO users (firstname, lastname, email, location, password, avatar_url, role_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      " INSERT INTO users (role_id, firstname, lastname, email, location, password, avatar) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [
+				3,
         data.firstname,
 				data.lastname,
 				data.email,
 				data.location,
 				data.password,
-				data.avatar_url,
-				3
+				data.avatar
       ],
 			(error, results, fields) => {
 				if (error) {
@@ -58,15 +58,15 @@ module.exports = {
 	// Define a prepared statement for updating a user
 	UpdateUser : (id, data, callBack) => {
 		pool.query(
-			"UPDATE users set firstname=?, lastname=?, email=?, location=?, password=?, avatar_url=?, role_id=? WHERE id = ?",
+			"UPDATE users set role_id=?, firstname=?, lastname=?, email=?, location=?, password=?, avatar=? WHERE id = ?",
 			[
+				data.role_id,
 				data.firstname,
 				data.lastname,
 				data.email,
 				data.location,
 				data.password,
-				data.avatar_url,
-				3,
+				data.avatar,
 				id
 			],
 			(error, results, fields) => {
