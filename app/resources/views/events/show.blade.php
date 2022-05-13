@@ -11,7 +11,7 @@
     <div class="container" style="margin-block: 5rem">
         <div class="row gx-4 py-5">
             <div class="col-12 col-lg-6">
-                <img src="{{ asset($event->image_url) }}" style="border-radius: 0.4rem">
+                <img src="{{ asset('storage/' . $event->image_url) }}" style="border-radius: 0.4rem">
             </div>
 
             <div class="col mt-5 mt-lg-0">
