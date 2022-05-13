@@ -158,7 +158,7 @@
             @foreach ($event->comments as $comment)
                 <div class="row mt-1 gx-3">
                     <div class="col-2 col-md-1">
-                        <img src="{{ asset('storage/avatars/' . $comment->avatar_url) }}" alt=""
+                        <img src="{{ asset('storage/avatars/' . $comment->avatar) }}" alt=""
                             style="border-radius: 50%">
                     </div>
                     <div class="col">

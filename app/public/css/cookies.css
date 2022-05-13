@@ -1,23 +1,17 @@
-
- #cookiePopup {
-    background: white;
-    width: 25%;
-    position: fixed;
-    left: 10px;
-    bottom: 20px;
-    box-shadow: 0px 0px 15px #cccccc;
-    padding: 5px 10px;
-  }
-    #cookiePopup p{
-    text-align: left;
-    font-size: 15px;
-    color: #4e4e4e;
-  }
-  #cookiePopup button{
+#cookie-popup {
+    background: var(--clr-accent-200);
     width: 100%;
-    border: navajowhite;
-    background: #097fb7;
-    padding: 5px;
-    border-radius: 10px;
-    color: white;
-  }
+    position: fixed;
+    bottom: 0;
+    padding: 2em;
+    z-index: 8000;
+    color: var(--clr-neutral-100);
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    box-shadow: 30px 0 20px rgba(0, 0, 0, 0.25);
+}
+
+#cookie-popup a{
+  color: var(--clr-neutral-100);
+  text-decoration: underline;
+}

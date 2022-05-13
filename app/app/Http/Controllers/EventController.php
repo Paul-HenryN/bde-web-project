@@ -160,10 +160,6 @@ class EventController extends Controller
 
 		Mail::to($user->email)->send(new Email($data));
 
-<<<<<<< HEAD
-		// return back()->withText("Email sent successfully");
-=======
 		return redirect('/');
->>>>>>> 9ce003c66b7d41a96182249528ef56c4036cf615
     }
 }

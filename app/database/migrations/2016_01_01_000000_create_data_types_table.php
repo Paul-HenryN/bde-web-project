@@ -23,6 +23,7 @@ class CreateDataTypesTable extends Migration
             $table->string('model_name')->nullable();
             $table->string('description')->nullable();
             $table->boolean('generate_permissions')->default(false);
+            $table->text('details')->nullable();
             $table->timestamps();
         });
 

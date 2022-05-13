@@ -1,21 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-
-*{
-  font-family: 'Poppins', sans-serif;
-  margin:0; padding:0;
-  box-sizing: border-box;
-  outline: none; border:none;
-  text-transform: capitalize;
-  transition: all .2s linear;
-}
-
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
   padding:25px;
-  min-height: 100vh;
-  background: linear-gradient(90deg, #D3D3D3 60%, #D3D3D3 40.1%);
 }
 
 .container form{
@@ -37,7 +24,7 @@
 
 .container form .row .col .title{
   font-size: 20px;
-  color:#333;
+  color: var(--clr-neutral-200);
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -60,7 +47,7 @@
 }
 
 .container form .row .col .inputBox input:focus{
-  border:1px solid #000;
+  border:1px solid var(--clr-neutral-200);
 }
 
 .container form .row .col .flex{
@@ -73,21 +60,11 @@
 }
 
 .container form .row .col .inputBox img{
-  height: 34px;
+  width: 40%;
   margin-top: 5px;
   filter: drop-shadow(0 0 1px #000);
 }
 
-.container form .submit-btn{
+.btn-primary {
   width: 100%;
-  padding:12px;
-  font-size: 17px;
-  background: #6495ED;
-  color:#fff;
-  margin-top: 5px;
-  cursor: pointer;
-} 
-
-.container form .submit-btn:hover{
-  background: #0F52BA;
 }

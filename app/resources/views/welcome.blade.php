@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cookies.css') }}">
 @endsection
 
 @section('sub-header')
@@ -141,7 +142,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/cards/card-3.png') }}" alt="Card image cap">
@@ -391,14 +392,15 @@
         </div>
     </section>
 
-    <div id="cookiePopup">
+    <div id="cookie-popup">
         <h4>Cookie Consent</h4>
-        <p> . By continuing to browse this site, you agree to the use of cookies to give you the best possible web experience.If you want to know more and access the cookie settings, click on this link<a href="#">Cookie Policy</a></p>
-        <button id="acceptCookie">Agree</button> 
-        <button id="acceptCookie">Deny</button> 
+        <p class="my-3">By continuing to browse this site, you agree to the use of cookies to give you the best possible web
+            experience. If you want to know more and access the cookie settings, click on this link: <a href="#">Cookie
+                Policy</a></p>
 
+        <button id="acceptCookie" class="btn btn-primary">Agree</button>
+        <button id="denyCookie" class="btn btn-secondary">Deny</button>
     </div>
-
 @endsection
 
 @section('scripts')
@@ -412,7 +414,7 @@
     <script src="{{ asset('js/slick-slider.js') }}"></script>
     <script src="{{ asset('js/cookies.js') }}"></script>
 
-    
+
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');

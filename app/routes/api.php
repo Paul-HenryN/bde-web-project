@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/orders', [ArticleController::class, 'show']);
+Route::get('/articles/{id}', [ArticleController::class, 'show']);
 
-Route::post('/orders', [OrderController::class, 'store']);
+Route::post('/order', [OrderController::class, 'store']);

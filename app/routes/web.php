@@ -8,6 +8,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\OrderController;
 
 
 /*
@@ -88,9 +89,20 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 /**
+ * Ordering
+ */
+Route::post('/order', [OrderController::class, 'store'])
+    ->middleware('auth');
+
+/**
  * Mail Sending
  */
 Route::get('/admin/validate/{event_id}', [EventController::class, 'publish']);
 Route::put('/admin/validate/{event_id}', [EventController::class, 'publish']);
 
-Route::post('/order', [OrderController::class, 'store']);
+/**
+ * Payment
+ */
+Route::get('/pay', function() {
+    return view('pay.paypal');
+});

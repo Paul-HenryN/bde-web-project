@@ -32,7 +32,7 @@
                                                     <p class="price_text">{{ $article->price }} FCFA</span>
                                                     </p>
                                                     <div class="my-3"><img
-                                                            src="{{ asset($article->image_url) }}">
+                                                            src="{{ asset('storage/'.$article->image_url) }}">
                                                     </div>
                                                     <p>{{ $article->description }}</p>
                                                     <div class="mt-3">

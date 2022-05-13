@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 // Import classes for mail
 use Illuminate\Support\Facades\Mail;
@@ -40,20 +41,28 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        Order::create([
-            'user_id' => $request->user_id,
-            'article_id' => $request->article_id,
-            'quantity' => $request->quantity
-        ]);
+        if(isset($_COOKIE['cart'])){
+            $articleIds = explode(',', $_COOKIE['cart']); 
 
-        $user = User::find($request->user_id);
-        
-        $data = [
-            'body' => "The student $user->firstname  $user->lastname orders an article."
-        ];
+            foreach($articleIds as $articleId){
+                Order::create([
+                    'user_id' => Auth::user()->id,
+                    'article_id' => $articleId,
+                ]);
+            }
 
-        Mail::to("bdedouala@gmail.com")->send(new Email($data));
-		return redirect ('/');
+            $user = User::find(Auth::user()->id);
+            
+            $data = [
+                'body' => "The student $user->firstname  $user->lastname has placed an order."
+            ];
+
+            // Mail::to("ngpaulhenry@gmail.com")->send(new Email($data));
+
+            setcookie('cart', '', time() - 3600);
+            
+            return redirect ('/pay');
+        }
     }
 
     /**
