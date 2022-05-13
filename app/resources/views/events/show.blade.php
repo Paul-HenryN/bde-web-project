@@ -50,6 +50,12 @@
                                 Subscribe
                             </a>
                         @endif
+
+                        <a href="/downloadpdf/{{ $event->id }}"
+                                class="btn btn-subscribe btn-round d-flex justify-content-center align-items-center gap-2">
+                                <i class="fa-solid"></i>
+                                Subscribe
+                            </a>
                     </div>
                 </div>
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PDFExportController;
 
 
 /*
@@ -106,3 +107,10 @@ Route::put('/admin/validate/{event_id}', [EventController::class, 'publish']);
 Route::get('/pay', function() {
     return view('pay.paypal');
 });
+
+/**
+ * PDF Export
+ */
+Route::get('/eventsubscribers/{event_id}', [PDFExportController::class, 'getAllEventSubscribers']);
+
+Route::get('/downloadpdf/{event_id}', [PDFExportController::class, 'downloadPDF']);

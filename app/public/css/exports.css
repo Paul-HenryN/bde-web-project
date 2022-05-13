@@ -1,0 +1,22 @@
+
+
+#eventsubcriber {
+  border-collapse: collapse;
+  width : 100%;
+}
+
+#eventsubscriber td, #eventsubscriber th {
+  border: 2px solid #ddd;
+  padding: 8px;
+}
+
+#eventsubscriber tr:nth-child(even) {
+  background-color: #0693e3;
+}
+
+#eventsubscriber th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #cecccc;
+}

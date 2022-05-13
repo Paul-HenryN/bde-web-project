@@ -42,7 +42,7 @@
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card">
                             <a href="/events/{{ $event->id }}">
-                                <img class="card-img-top" src="{{ asset($event->image_url) }}" alt="Card image cap">
+                                <img class="card-img-top" src="{{ asset('storage/' . $event->image_url) }}" alt="Card image cap">
                             </a>
 
                             <div class="card-cta d-flex gap-2">
@@ -114,7 +114,7 @@
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card">
                         <a href="/events/{{ $event->id }}">
-                            <img class="card-img-top" src="{{ asset($event->image_url) }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('storage/' . $event->image_url) }}" alt="Card image cap">
                         </a>
 
                         <div class="card-cta d-flex gap-2">
